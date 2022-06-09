@@ -1,11 +1,21 @@
 document.getElementById("offers").addEventListener("click", () => {
-    offersVehicles();
+    clickOffersButton();
 });
 
-function offersVehicles(){
+function clickOffersButton(){
+    let brand = "";
+    let fuel = "";
+    let power = 50;
+    let price = 1000;
+    offersVehicles(brand, fuel, power, price);
+    fillNavVehicles(brand, fuel, power, price);
+}
+
+function offersVehicles(brand, fuel, power, price){
     document.getElementById("main").innerHTML = "";
     fetch("php/offers.php", {
-        method: 'GET'
+        method: 'POST',
+        body: JSON.stringify([brand, fuel, power, price])
     }).then(function (respuesta) {
         return respuesta.json();
     }).then(function (data) {
@@ -33,5 +43,57 @@ function offersVehicles(){
         }
     }).catch(function (ex) {
         console.log("Error", ex.mesagge)
+    });
+}
+
+function fillNavVehicles(brand, fuel, power, price) {
+    document.getElementById("nav-left").innerHTML = "";
+    fetch("php/offersFilter.php", {
+        method: 'GET'
+    }).then(function (respuesta) {
+        return respuesta.json();
+    }).then(function (data) {
+        //Clonamos la plantilla
+        let template = document.getElementById('card-nav').content;
+        let clone = template.cloneNode(true);
+
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.text = data[i].marca;
+            option.value = data[i].marca;
+
+            clone.querySelector('#brandFilter').appendChild(option)
+        }
+        filterChangeOfferVehicles(clone, brand, fuel, power, price);
+        //"colgamos" al objeto clone de algún elemento del DOM
+        document.querySelector('.vehicleMenu').appendChild(clone);
+    }).catch(function (ex) {
+        console.log("Error", ex.mesagge)
+    });
+}
+
+function filterChangeOfferVehicles(clone, brand, fuel, power, price) {
+    //Evento ONCHANGEFILTER 
+    clone.querySelector('#brandFilter').addEventListener("change", () => {
+        brand = document.getElementById("brandFilter").value;
+        offersVehicles(brand, fuel, power, price);
+    });
+
+    //Evento ONCHANGEFILTER 
+    clone.querySelector('#fuelFilter').addEventListener("change", () => {
+        fuel = document.getElementById("fuelFilter").value;
+        offersVehicles(brand, fuel, power, price);
+    });
+
+    //Evento ONCHANGEFILTER 
+    clone.querySelector('#powerFilter').addEventListener("change", () => {
+        power = document.getElementById("powerFilter").value;
+        offersVehicles(brand, fuel, power, price);
+    });
+
+    //Evento ONCHANGEFILTER 
+    clone.querySelector('#priceFilter').addEventListener("change", () => {
+        price = document.getElementById("priceFilter").value;
+        offersVehicles(brand, fuel, power, price);
     });
 }

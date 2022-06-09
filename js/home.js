@@ -9,9 +9,9 @@ if (localStorage.getItem("clickedVehicle") !== null) {
         clickBikesButton();
     }
     else{
-        offersVehicles();
+        clickOffersButton();
     }
 }
 else{
-    offersVehicles();
+    clickOffersButton();
 }

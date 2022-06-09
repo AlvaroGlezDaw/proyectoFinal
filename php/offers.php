@@ -5,10 +5,35 @@ include 'conexion.php';
 $cars = $dbPruebas->cars;
 $bikes = $dbPruebas->bikes;
 
-$offerCars = $cars->find( ['offer' => "yes"]);
-$offerBikes = $bikes->find( ['offer' => "yes"]);
-$allOfferVehicles=[];
+$criteriaVehicle=json_decode(file_get_contents('php://input'), true);
 
+//coches
+if($criteriaVehicle[0]=="" && $criteriaVehicle[1]=="")
+    $offerCars = $cars->find(['potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])], 'offer' => 'yes']);
+else if($criteriaVehicle[0]!="" && $criteriaVehicle[1]==""){
+    $offerCars = $cars->find(['marca' => $criteriaVehicle[0], 'potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])], 'offer' => 'yes']);
+}
+else if($criteriaVehicle[0]=="" && $criteriaVehicle[1]!=""){
+    $offerCars = $cars->find(['combustible'=>$criteriaVehicle[1], 'potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])],'offer' => 'yes']);
+}
+else{
+    $offerCars = $cars->find(['marca' => $criteriaVehicle[0], 'combustible'=>$criteriaVehicle[1], 'potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])], 'offer' => 'yes']);
+} 
+
+//bikes
+if($criteriaVehicle[0]=="" && $criteriaVehicle[1]=="")
+    $offerBikes = $bikes->find(['potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])], 'offer' => 'yes']);
+else if($criteriaVehicle[0]!="" && $criteriaVehicle[1]==""){
+    $offerBikes = $bikes->find(['marca' => $criteriaVehicle[0], 'potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])], 'offer' => 'yes']);
+}
+else if($criteriaVehicle[0]=="" && $criteriaVehicle[1]!=""){
+    $offerBikes = $bikes->find(['combustible'=>$criteriaVehicle[1], 'potencia' => ['$gte' => intval($criteriaVehicle[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])],'offer' => 'yes']);
+}
+else{
+    $offerBikes = $bikes->find(['marca' => $criteriaVehicle[0], 'combustible'=>$criteriaVehicle[1], 'potencia' => ['$gte' => intval($critericriteriaVehicleaCar[2])], 'precio' => ['$gte' => intval($criteriaVehicle[3])],'offer' => 'yes']);
+} 
+
+$allOfferVehicles=[];
 foreach ($offerCars as $car)
 {
     array_push($allOfferVehicles,$car);
