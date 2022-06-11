@@ -14,7 +14,21 @@
 <body>
     <div id="container" class="row col-12 mx-5">
         <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
-            <div class="row offset-8 col-4 mb-4">
+            <div id="loginRegister" class="col-2">
+                <a href="vistas/usuario/login.html" class="text-decoration-none fs-4 text-dark">Login</a>
+                <a href="vistas/usuario/login.html" class="ms-4 text-decoration-none fs-4 text-dark">Registrate</a>
+            </div>
+            
+            <div id="loginDates" class="col-2 d-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                <p id="userName"></p>
+                <button id="logout">Logout</button>
+            </div>
+
+            <div class="row offset-6 col-4 mb-4">
                 <p class="display-1"><span class="text-danger">STOP</span>&<span></span><span class="text-success">GO</span></p>
             </div>
             <div class="menu-principal row offset-1 col-10 gap-3">
@@ -26,7 +40,14 @@
             </div>
         </header>
     
-      <div id="paypal-button-container" class="row offset-3 col-6 border border-secondary border-3 rounded p-3">
+        <div class="row col-4 border border-secondary border-3 rounded p-3">
+            <h2>Datos del comprador:</h2>
+            <p id="userDataName"></p>
+            <p id="userEmail"></p>
+            <p id="userDirection"></p>
+        </div>
+
+      <div id="paypal-button-container" class="row offset-1 col-6 border border-secondary border-3 rounded p-3">
           <div id="creditMoney" class="col-6 d-flex flex-column justify-content-center align-items-center">
                 <p class="text-success display-4">20000€</p>
                 <p class="fs-4">Listo para efectuar el pago</p>

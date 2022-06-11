@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP&GO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script defer src="../../js/login.js"></script>
+</head>
+
+<body>
+    <div id="container" class="row col-12 mx-5">
+        <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
+            <div class="row offset-8 col-4 mb-4">
+                <p class="display-1"><span class="text-danger">STOP</span>&</span><span class="text-success">GO</span></p>
+            </div>
+            <div class="menu-principal row offset-1 col-10 gap-3">
+                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="cars">Coches</button>
+                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="bikes">Motos</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="trucks">Camiones</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="vans">Furgonetas</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="offers">Ofertas</button>
+            </div>
+        </header>
+
+        <main id="login" class="row col-12 justify-content-center py-5">
+            <div class="row col-6 border border-dark p-4">
+                <div class="row mb-4">
+                    <label class="text-dark" for="userEmail">Email:</label>
+                    <input id="userEmail" class="p-2" type="email" name="userEmail" value="">
+                    <label id="badEmail" class="text-danger d-none"></label>
+                </div>
+
+                <div class="row mb-4">
+                    <label class="text-dark" for="userPassword">Password:</label>
+                    <input id="passwordEmail" class="p-2" type="password" name="userPassword" value="">
+                    <label id="badPassword" class="text-danger d-none"></label>
+                </div>
+
+                <div>
+                    <a href="" class="">¿Aun no esta registrado?</a>
+                    <button id="signUp" class="btn btn-success offset-7 col-4 p-2">Login</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="row col-12 bg-dark text-light mt-5">
+            <div class="contacto row col-4">
+                <p>E-mail -> qwertyujg@gmail.com</p>
+                <p>FAX -> qwertyujg@gmail.com</p>
+                <p>Telefono -> 123456789</p>
+                <p>E-mail -> qwertyujg@gmail.com</p>
+            </div>
+            <div class="redes-sociales offset-5 row col-3">
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

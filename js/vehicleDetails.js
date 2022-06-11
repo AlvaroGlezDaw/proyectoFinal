@@ -1,5 +1,5 @@
 let idVehicle=localStorage.getItem('idVehicleDetail');
-
+comprobarLogin();
 fetch("../../php/vehicleDetails.php",{
     headers: {'Content-type': 'application/json'},
     method: 'POST', 
@@ -33,6 +33,15 @@ fetch("../../php/vehicleDetails.php",{
     console.error('Error', ex.message) 
 });
 
+document.getElementById("buy").addEventListener("click", ()=>{
+    if(localStorage.getItem('userLogued')!==null){
+        window.location.href="http://localhost/proyecto/vistas/usuario/vehicleMethodPayment.html"
+    }
+    else{
+        window.location.href="http://localhost/proyecto/vistas/usuario/login.html"
+    }
+})
+
 document.getElementById("cars").addEventListener("click", () => {
     window.location='http://localhost/proyecto/';
     localStorage.setItem('clickedVehicle', "cars");
@@ -41,4 +50,22 @@ document.getElementById("cars").addEventListener("click", () => {
 document.getElementById("bikes").addEventListener("click", () => {
     window.location='http://localhost/proyecto/';
     localStorage.setItem('clickedVehicle', "bikes");
+});
+
+function comprobarLogin(){
+    if(localStorage.getItem('userLogued')!==null){
+        document.getElementById("loginRegister").setAttribute("class", "d-none");
+        document.getElementById("loginDates").setAttribute("class", "d-block");
+        document.getElementById("userName").textContent="Bienvenido" + JSON.parse(localStorage.getItem('userLogued')).nombre;
+    }
+    else{
+        document.getElementById("loginDates").setAttribute("class", "d-none");
+        document.getElementById("userName").textContent="";
+        document.getElementById("loginRegister").setAttribute("class", "d-block");
+    }
+}
+
+document.getElementById("logout").addEventListener("click", ()=>{
+    localStorage.removeItem('userLogued');
+    comprobarLogin();
 });

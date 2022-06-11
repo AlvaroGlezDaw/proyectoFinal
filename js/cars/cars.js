@@ -3,6 +3,11 @@ document.getElementById("cars").addEventListener("click", () => {
 });
 
 function clickCarsButton(){
+        localStorage.setItem('clickedVehicle', "cars");
+        document.getElementById("cars").style.borderWidth="0.25em";
+        document.getElementById("bikes").style.borderWidth="0.1em";
+        document.getElementById("cars").style.borderBlockColor="#6495ED";
+        document.getElementById("bikes").style.borderColor="#000";
         let brand = "";
         let fuel = "";
         let power = 50;

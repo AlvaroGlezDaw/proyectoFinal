@@ -3,6 +3,9 @@ document.getElementById("bikes").addEventListener("click", () => {
 });
 
 function clickBikesButton(){
+    localStorage.setItem('clickedVehicle', "bikes");
+    document.getElementById("bikes").style.borderWidth="0.25em";
+    document.getElementById("cars").style.borderWidth="0.1em";
     let brand = "";
     let fuel = "";
     let power = 50;

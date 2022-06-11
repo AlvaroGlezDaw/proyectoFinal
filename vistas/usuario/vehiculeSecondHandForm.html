@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP&GO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="container" class="row col-12 mx-5">
+        <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
+            <div class="row offset-8 col-4 mb-4">
+                <p class="display-1"><span class="text-danger">STOP</span>&<span></span><span
+                        class="text-success">GO</span></p>
+            </div>
+            <div class="menu-principal row offset-1 col-10 gap-3">
+                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark"
+                    id="cars">Coches</button>
+                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark"
+                    id="bikes">Motos</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark"
+                    id="trucks">Camiones</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark"
+                    id="vans">Furgonetas</button>
+                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark"
+                    id="offers">Ofertas</button>
+            </div>
+        </header>
+
+        <main id="main" class="vehiculos row col-12 justify-content-center">
+            <form class="row col-10" action="../../php/carPayment.php" method="post">
+                <div class="row col-6 gap-3 mb-5">
+                    <h2>Datos del vehiculo</h2>
+                    <div class="form-group row col-10">
+                        <label for="brandSecondHand">Marca</label>
+                        <input class="form-control" type="text" name="brandSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="modelSecondHand">Modelo</label>
+                        <input class="form-control" type="text" name="modelSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="yearSecondHand">Año de fabricación</label>
+                        <input class="form-control" type="number" name="yearSecondHand" value="2005" min="1990" max="2022" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="powerSecondHand">Potencia</label>
+                        <input class="form-control" type="text" name="powerSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="ccSecondHand">cilindrada</label>
+                        <input class="form-control" type="number" name="ccSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="gearSecondHand">Cambio</label>
+                        <select class="form-control" id="gearSecondHand" name="gearSecondHand">
+                            <option value="Manual" selected>Manual</option>
+                            <option value="Automatico">Automatico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="nDoorsSecondHand">Numero de puertas</label>
+                        <input class="form-control" type="number" name="nDoorsSecondHand" value="2" min="2" max="5" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="colorSecondHand">Color</label>
+                        <input class="form-control" type="text" name="colorSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="FuelSecondHand">Combustible</label>
+                        <select class="form-control" id="FuelSecondHand" name="FuelSecondHand">
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hibrido">Híbrido</option>
+                            <option value="Electrico">Eléctrico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="PriceSecondHand">Precio</label>
+                        <input class="form-control" type="number" name="PriceSecondHand" min="0" max="200.000" required>
+                    </div>
+                    
+                    <div class="form-group row col-10">
+                        <label for="imageSecondHand">Imagenes</label>
+                        <input class="form-control" type="text" name="imageSecondHand" required>
+                    </div>
+                    
+                    <div class="form-group row col-10">
+                        <label for="descriptionSecondHand">Descripcion</label>
+                        <textarea class="form-control" id="descriptionSecondHand" name="descriptionSecondHand" rows="3"
+                            required></textarea>
+                    </div>
+                </div>
+
+                <div class="col-6 mb-5 gap-3">
+                    <h2 class="mb-4">Datos del Anunciante</h2>
+
+                    <div class="form-group row col-10 mb-3">
+                        <label for="nameSellerSecondHand">Nombre</label>
+                        <input class="form-control" type="text" name="nameSellerSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-10 mb-3">
+                        <label for="tlfnoSellerSecondHand">Teléfono</label>
+                        <input class="form-control" type="text" name="tlfnoSellerSecondHand" required>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="emailSellerSecondHand">Email</label>
+                        <input class="form-control" type="email" name="emailSellerSecondHand" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary offset-3 col-6 btn btn-primary p-3">Subir anuncio</a>
+            </form>
+        </main>
+
+        <footer class="row col-12 bg-dark text-light mt-5">
+            <div class="contacto row col-4">
+                <p>E-mail -> qwertyujg@gmail.com</p>
+                <p>FAX -> qwertyujg@gmail.com</p>
+                <p>Telefono -> 123456789</p>
+                <p>E-mail -> qwertyujg@gmail.com</p>
+            </div>
+            <div class="redes-sociales offset-5 row col-3">
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
