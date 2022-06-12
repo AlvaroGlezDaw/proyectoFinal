@@ -13,12 +13,28 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script defer src="../../js/vehicleSecondHandForm.js"></script>
+
 </head>
 
 <body>
     <div id="container" class="row col-12 mx-5">
         <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
-            <div class="row offset-8 col-4 mb-4">
+            <div id="loginRegister" class="col-2">
+                <a href="login.html" class="text-decoration-none fs-4 text-dark">Login</a>
+                <a href="register.html" class="ms-4 text-decoration-none fs-4 text-dark">Registrate</a>
+            </div>
+            
+            <div id="loginDates" class="col-2 d-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                <p id="userName"></p>
+                <button id="logout">Logout</button>
+            </div>
+            
+            <div class="row offset-6 col-4 mb-4">
                 <p class="display-1"><span class="text-danger">STOP</span>&<span></span><span
                         class="text-success">GO</span></p>
             </div>
@@ -37,9 +53,19 @@
         </header>
 
         <main id="main" class="vehiculos row col-12 justify-content-center">
-            <form class="row col-10" action="../../php/carPayment.php" method="post">
-                <div class="row col-6 gap-3 mb-5">
+            <form class="row col-10 " action="../../php/vehicleSecondHandForm.php" method="post">
+                <div class="row col-6 mb-5 gap-3 border border-secondary border-3 rounded p-4">
                     <h2>Datos del vehiculo</h2>
+                    <div class="form-group row col-10">
+                        <label for="typeVehicleSecondHand">Tipo de vehiculo</label>
+                        <select class="form-control" id="typeVehicleSecondHand" name="typeVehicleSecondHand">
+                            <option value="coche" selected>Coche</option>
+                            <option value="moto">Moto</option>
+                            <option value="furgoneta">Furgoneta</option>
+                            <option value="camion">Camion</option>
+                        </select>
+                    </div>
+
                     <div class="form-group row col-10">
                         <label for="brandSecondHand">Marca</label>
                         <input class="form-control" type="text" name="brandSecondHand" required>
@@ -57,12 +83,12 @@
 
                     <div class="form-group row col-5">
                         <label for="powerSecondHand">Potencia</label>
-                        <input class="form-control" type="text" name="powerSecondHand" required>
+                        <input class="form-control col-2" type="text" name="powerSecondHand" required>
                     </div>
 
                     <div class="form-group row col-5">
-                        <label for="ccSecondHand">cilindrada</label>
-                        <input class="form-control" type="number" name="ccSecondHand" required>
+                        <label for="ccSecondHand">Cilindrada</label>
+                        <input class="form-control" type="number" name="ccSecondHand" min="1000" step="100" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -95,22 +121,22 @@
 
                     <div class="form-group row col-5">
                         <label for="PriceSecondHand">Precio</label>
-                        <input class="form-control" type="number" name="PriceSecondHand" min="0" max="200.000" required>
+                        <input class="form-control" type="number" name="PriceSecondHand" min="0" max="200000" required>
                     </div>
                     
                     <div class="form-group row col-10">
                         <label for="imageSecondHand">Imagenes</label>
-                        <input class="form-control" type="text" name="imageSecondHand" required>
+                        <input class="form-control" type="text" name="imageSecondHand">
                     </div>
                     
                     <div class="form-group row col-10">
                         <label for="descriptionSecondHand">Descripcion</label>
                         <textarea class="form-control" id="descriptionSecondHand" name="descriptionSecondHand" rows="3"
-                            required></textarea>
+                            ></textarea>
                     </div>
                 </div>
 
-                <div class="col-6 mb-5 gap-3">
+                <div class="col-5 ms-5 mb-5 gap-3 border border-secondary border-3 rounded p-4">
                     <h2 class="mb-4">Datos del Anunciante</h2>
 
                     <div class="form-group row col-10 mb-3">

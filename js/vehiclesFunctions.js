@@ -1,23 +1,7 @@
-document.getElementById("bikes").addEventListener("click", () => {
-    clickBikesButton();
-});
-
-function clickBikesButton() {
-    localStorage.setItem('clickedVehicle', "bikes");
-    document.getElementById("bikes").style.borderWidth = "0.25em";
-    document.getElementById("cars").style.borderWidth = "0.1em";
-    let brand = "";
-    let fuel = "";
-    let power = 50;
-    let price = 0;
-    let secondHand = "no";
-    getBikeByCriteria(brand, fuel, power, price, secondHand);
-    fillNavBikes(brand, fuel, power, price, secondHand);
-}
-
-function getBikeByCriteria(brand, fuel, power, price, secondHand) {
+function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand) {
     document.getElementById("main").innerHTML = "";
-    fetch("php/bikes.php", {
+    let vehicleRute=checkVehicleType(vehicleType);
+    fetch(vehicleRute, {
         method: 'POST',
         body: JSON.stringify([brand, fuel, power, price, secondHand])
     }).then(function (respuesta) {
@@ -50,9 +34,20 @@ function getBikeByCriteria(brand, fuel, power, price, secondHand) {
     });
 }
 
-function fillNavBikes(brand, fuel, power, price, secondHand) {
+function checkVehicleType(vehicleType){
+    if(vehicleType==="car"){
+        return "php/cars.php"
+    }
+    else{
+        return "php/bikes.php"
+    }
+}
+
+
+function fillNavCars(vehicleType, brand, fuel, power, price, secondHand) {
     document.getElementById("nav-left").innerHTML = "";
-    fetch("php/bikesFilter.php", {
+    let vehicleFilterRute=checkVehicleTypeFilter(vehicleType);
+    fetch(vehicleFilterRute, {
         method: 'GET'
     }).then(function (respuesta) {
         return respuesta.json();
@@ -68,56 +63,65 @@ function fillNavBikes(brand, fuel, power, price, secondHand) {
 
             clone.querySelector('#brandFilter').appendChild(option)
         }
-        filterChangeBikes(clone, brand, fuel, power, price, secondHand);
+        filterChange(clone, brand, fuel, power, price, secondHand);
+        //"colgamos" al objeto clone de algún elemento del DOM
 
-        clone.querySelector("#secondHandButton").addEventListener("click", () => {
-            if (localStorage.getItem('userLogued') !== null) {
-                window.location.href = "http://localhost/proyecto/vistas/usuario/vehiculeSecondHandForm.html";
+        clone.querySelector("#secondHandButton").addEventListener("click", ()=>{
+            if(localStorage.getItem('userLogued')!==null){
+                window.location.href="http://localhost/proyecto/vistas/usuario/vehiculeSecondHandForm.html";
             }
-            else {
-                window.location.href = "http://localhost/proyecto/vistas/usuario/login.html";
+            else{
+                window.location.href="http://localhost/proyecto/vistas/usuario/login.html";
             }
         })
-
-        //"colgamos" al objeto clone de algún elemento del DOM
+        
         document.querySelector('.vehicleMenu').appendChild(clone);
     }).catch(function (ex) {
         console.log("Error", ex.mesagge)
     });
 }
 
-function filterChangeBikes(clone, brand, fuel, power, price, secondHand) {
+function checkVehicleTypeFilter(vehicleType){
+    if(vehicleType==="car"){
+        return "php/carsFilter.php"
+    }
+    else{
+        return "php/bikesFilter.php"
+    }
+}
+
+function filterChange(vehicleType, clone, brand, fuel, power, price, secondHand) {
     //Evento ONCHANGEFILTER 
     clone.querySelector('#brandFilter').addEventListener("change", () => {
         brand = document.getElementById("brandFilter").value;
-        getBikeByCriteria(brand, fuel, power, price, secondHand);
+        getVehiclesByCriteria(vehicleType,brand, fuel, power, price, secondHand);
     });
 
     //Evento ONCHANGEFILTER 
     clone.querySelector('#fuelFilter').addEventListener("change", () => {
         fuel = document.getElementById("fuelFilter").value;
-        getBikeByCriteria(brand, fuel, power, price, secondHand);
+        getVehiclesByCriteria(vehicleType,brand, fuel, power, price, secondHand);
     });
 
     //Evento ONCHANGEFILTER 
     clone.querySelector('#powerFilter').addEventListener("change", () => {
         power = document.getElementById("powerFilter").value;
-        getBikeByCriteria(brand, fuel, power, price, secondHand);
+        getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand);
     });
 
     //Evento ONCHANGEFILTER 
     clone.querySelector('#priceFilter').addEventListener("change", () => {
         price = document.getElementById("priceFilter").value;
-        getBikeByCriteria(brand, fuel, power, price, secondHand);
+        getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand);
     });
 
     //Evento ONCHANGEFILTER 
     clone.querySelector('#secondHandFilter').addEventListener("change", () => {
-        if (document.getElementById("secondHandFilter").value === "no")
-            document.getElementById("secondHandFilter").value = "yes";
+        if(document.getElementById("secondHandFilter").value==="no")
+            document.getElementById("secondHandFilter").value="yes";
         else
-            document.getElementById("secondHandFilter").value = "no";
+            document.getElementById("secondHandFilter").value="no";
         secondHand = document.getElementById("secondHandFilter").value;
-        getBikeByCriteria(brand, fuel, power, price, secondHand);
+        getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand);
     });
 }

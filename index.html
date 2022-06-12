@@ -24,7 +24,7 @@
         <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
             <div id="loginRegister" class="col-2">
                 <a href="vistas/usuario/login.html" class="text-decoration-none fs-4 text-dark">Login</a>
-                <a href="vistas/usuario/login.html" class="ms-4 text-decoration-none fs-4 text-dark">Registrate</a>
+                <a href="vistas/usuario/register.html" class="ms-4 text-decoration-none fs-4 text-dark">Registrate</a>
             </div>
             
             <div id="loginDates" class="col-2 d-none">
@@ -62,7 +62,7 @@
                         <input type="checkbox" class="form-check-input fs-4 mx-3" id="secondHandFilter" name="secondHandFilter" value="no">
                     </div>
                     <div class="col-7">
-                        <a href="vistas/usuario/vehiculeSecondHandForm.html" class="btn btn-success border border-dark">!Sube tu anuncio!</a>
+                        <button id="secondHandButton" class="btn btn-success border border-dark">!Sube tu anuncio!</button>
                     </div>
                 </div>
 
@@ -98,8 +98,8 @@
                 <div class="row col-12 mb-5" style="height: 100px;">
                     <label for="priceFilter" class="form-label col-12 text-info fs-4 fw-light fst-italic mb-0 ps-0">Precio</label>
                     <hr class="mb-3">
-                    <input type="range" list="tickmarks" class="form-range col-12 text-light" id="priceFilter" value="1000"
-                        step="2000" min="1000" max="200000">
+                    <input type="range" list="tickmarks" class="form-range col-12 text-light" id="priceFilter" value="0"
+                        step="2000" min="0" max="200000">
                     <label for="" class="pull-left col-6 text-light">0€</label>
                     <label for="" class="pull-right col-6 text-end text-light">200000€</label>
                 </div>

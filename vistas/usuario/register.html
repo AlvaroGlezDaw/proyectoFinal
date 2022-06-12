@@ -13,7 +13,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <script defer src="../../js/login.js"></script>
+    <script defer src="../../js/register.js"></script>
 </head>
 
 <body>
@@ -45,25 +45,31 @@
             </div>
         </header>
 
-        <main id="login" class="row col-12 justify-content-center py-5">
-            <div class="row col-6 border border-dark p-4">
+        <main id="register" class="row col-12 justify-content-center py-5">
+            <form id="registerForm" method="POST" action="../../php/register.php" class="row col-6 border border-dark p-4">
                 <div class="row mb-4">
-                    <label class="text-dark" for="userEmail">Email:</label>
-                    <input id="userEmail" class="p-2" type="email" name="userEmail" value="">
-                    <label id="badEmail" class="text-danger d-none"></label>
+                    <label class="text-dark" for="userRegisterName">Nombre:</label>
+                    <input id="userRegisterName" class="p-2" type="text" name="userRegisterName" value="" required>
                 </div>
 
                 <div class="row mb-4">
-                    <label class="text-dark" for="userPassword">Password:</label>
-                    <input id="passwordEmail" class="p-2" type="password" name="userPassword" value="">
-                    <label id="badPassword" class="text-danger d-none"></label>
+                    <label class="text-dark" for="userRegisterPassword">Password:</label>
+                    <input id="userRegisterPassword" class="p-2" type="password" name="userRegisterPassword" value="" required>
                 </div>
 
+                <div class="row mb-4">
+                    <label class="text-dark" for="userRegisterEmail">Email:</label>
+                    <input id="userRegisterEmail" class="p-2" type="email" name="userRegisterEmail" value="" required>
+                </div>
+
+                <div class="row mb-4">
+                    <label class="text-dark" for="userRegisterDirection">Dirección:</label>
+                    <input id="userRegisterDirection" class="p-2" type="text" name="userRegisterDirection" value="" required>
+                </div>
                 <div>
-                    <a href="register.html" class="">¿Aun no esta registrado?</a>
-                    <button id="signUp" class="btn btn-success offset-7 col-4 p-2">Login</button>
+                    <button id="buttonRegister" type="submit" class="btn btn-success offset-7 col-4 p-2">Registrarse</button>
                 </div>
-            </div>
+            </form>
         </main>
 
         <footer class="row col-12 bg-dark text-light mt-5">

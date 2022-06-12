@@ -1,21 +1,14 @@
-
-let clickedVehicle=localStorage.getItem('clickedVehicle');
-
 comprobarLogin();
-if (localStorage.getItem("clickedVehicle") !== null) {
-    if (clickedVehicle == "cars") {
-        clickCarsButton();
-    }
-    else if(clickedVehicle == "bikes"){
-        clickBikesButton();
-    }
-    else{
-        clickOffersButton();
-    }
-}
-else{
-    clickOffersButton();
-}
+
+document.getElementById("cars").addEventListener("click", () => {
+    window.location='http://localhost/proyecto/';
+    localStorage.setItem('clickedVehicle', "cars");
+});
+
+document.getElementById("bikes").addEventListener("click", () => {
+    window.location='http://localhost/proyecto/';
+    localStorage.setItem('clickedVehicle', "bikes");
+});
 
 function comprobarLogin(){
     if(localStorage.getItem('userLogued')!==null){
@@ -33,5 +26,5 @@ function comprobarLogin(){
 document.getElementById("logout").addEventListener("click", ()=>{
     localStorage.removeItem('userLogued');
     comprobarLogin();
-    //window.location.href="index.html";
+    window.location.href="../../index.html";
 });

@@ -11,7 +11,7 @@ function clickCarsButton(){
         let brand = "";
         let fuel = "";
         let power = 50;
-        let price = 10000;
+        let price = 0;
         let secondHand = "no";
         getCarsByCriteria(brand, fuel, power, price, secondHand);
         fillNavCars(brand, fuel, power, price, secondHand);
@@ -71,13 +71,23 @@ function fillNavCars(brand, fuel, power, price, secondHand) {
         }
         filterChangeCars(clone, brand, fuel, power, price, secondHand);
         //"colgamos" al objeto clone de algún elemento del DOM
+
+        clone.querySelector("#secondHandButton").addEventListener("click", ()=>{
+            if(localStorage.getItem('userLogued')!==null){
+                window.location.href="http://localhost/proyecto/vistas/usuario/vehiculeSecondHandForm.html";
+            }
+            else{
+                window.location.href="http://localhost/proyecto/vistas/usuario/login.html";
+            }
+        })
+        
         document.querySelector('.vehicleMenu').appendChild(clone);
     }).catch(function (ex) {
         console.log("Error", ex.mesagge)
     });
 }
 
-function filterChangeCars(clone, brand, fuel, power, price) {
+function filterChangeCars(clone, brand, fuel, power, price, secondHand) {
     //Evento ONCHANGEFILTER 
     clone.querySelector('#brandFilter').addEventListener("change", () => {
         brand = document.getElementById("brandFilter").value;
