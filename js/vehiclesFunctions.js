@@ -52,8 +52,11 @@ function checkVehicleType(vehicleType){
     if(vehicleType==="cars"){
         return "php/cars.php"
     }
-    else{
+    else if(vehicleType==="bikes"){
         return "php/bikes.php"
+    }
+    else{
+        return "php/offers.php"
     }
 }
 
@@ -100,8 +103,11 @@ function checkVehicleTypeFilter(vehicleType){
     if(vehicleType==="cars"){
         return "php/carsFilter.php"
     }
-    else{
+    else if(vehicleType==="bikes"){
         return "php/bikesFilter.php"
+    }
+    else{
+        return "php/offersFilter.php"
     }
 }
 
