@@ -1,3 +1,17 @@
+function clickVehicleButton(vehicletype){
+    localStorage.setItem('clickedVehicle', vehicletype);
+    document.getElementById("cars").style.borderWidth="0.25em";
+    document.getElementById("bikes").style.borderWidth="0.1em";
+    document.getElementById("cars").style.borderBlockColor="#6495ED";
+    document.getElementById("bikes").style.borderColor="#000";
+    let brand = "";
+    let fuel = "";
+    let power = 50;
+    let price = 0;
+    let secondHand = "no";
+    getVehiclesByCriteria(vehicletype, brand, fuel, power, price, secondHand);
+    fillNavVehicles(vehicletype, brand, fuel, power, price, secondHand);
+}
 function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand) {
     document.getElementById("main").innerHTML = "";
     let vehicleRute=checkVehicleType(vehicleType);
@@ -35,7 +49,7 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
 }
 
 function checkVehicleType(vehicleType){
-    if(vehicleType==="car"){
+    if(vehicleType==="cars"){
         return "php/cars.php"
     }
     else{
@@ -43,10 +57,11 @@ function checkVehicleType(vehicleType){
     }
 }
 
-
-function fillNavCars(vehicleType, brand, fuel, power, price, secondHand) {
+function fillNavVehicles(vehicleType, brand, fuel, power, price, secondHand) {
+    console.log(vehicleType);
     document.getElementById("nav-left").innerHTML = "";
     let vehicleFilterRute=checkVehicleTypeFilter(vehicleType);
+    console.log(vehicleFilterRute);
     fetch(vehicleFilterRute, {
         method: 'GET'
     }).then(function (respuesta) {
@@ -63,8 +78,7 @@ function fillNavCars(vehicleType, brand, fuel, power, price, secondHand) {
 
             clone.querySelector('#brandFilter').appendChild(option)
         }
-        filterChange(clone, brand, fuel, power, price, secondHand);
-        //"colgamos" al objeto clone de algún elemento del DOM
+        filterChange(vehicleType, clone, brand, fuel, power, price, secondHand);
 
         clone.querySelector("#secondHandButton").addEventListener("click", ()=>{
             if(localStorage.getItem('userLogued')!==null){
@@ -75,6 +89,7 @@ function fillNavCars(vehicleType, brand, fuel, power, price, secondHand) {
             }
         })
         
+        //"colgamos" al objeto clone de algún elemento del DOM
         document.querySelector('.vehicleMenu').appendChild(clone);
     }).catch(function (ex) {
         console.log("Error", ex.mesagge)
@@ -82,7 +97,7 @@ function fillNavCars(vehicleType, brand, fuel, power, price, secondHand) {
 }
 
 function checkVehicleTypeFilter(vehicleType){
-    if(vehicleType==="car"){
+    if(vehicleType==="cars"){
         return "php/carsFilter.php"
     }
     else{
