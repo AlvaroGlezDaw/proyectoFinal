@@ -8,7 +8,6 @@ document.getElementById("signUp").addEventListener("click", () => {
     }).then(function (respuesta) {
         return respuesta.json();
     }).then(function (data) {
-        console.log(data);
         if(data!=null && data !=""){
             document.getElementById("badEmail").setAttribute("class", "d-none");
             if(data[0].password==password){

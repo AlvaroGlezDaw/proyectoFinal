@@ -15,6 +15,7 @@ function clickVehicleButton(vehicletype){
 function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand) {
     document.getElementById("main").innerHTML = "";
     let vehicleRute=checkVehicleType(vehicleType);
+    console.log(vehicleRute);
     fetch(vehicleRute, {
         method: 'POST',
         body: JSON.stringify([brand, fuel, power, price, secondHand])
@@ -50,7 +51,7 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
 
 function checkVehicleType(vehicleType){
     if(vehicleType==="cars"){
-        return "php/cars.php"
+        return "php/carss/cars.php"
     }
     else if(vehicleType==="bikes"){
         return "php/bikes.php"
@@ -61,10 +62,8 @@ function checkVehicleType(vehicleType){
 }
 
 function fillNavVehicles(vehicleType, brand, fuel, power, price, secondHand) {
-    console.log(vehicleType);
     document.getElementById("nav-left").innerHTML = "";
     let vehicleFilterRute=checkVehicleTypeFilter(vehicleType);
-    console.log(vehicleFilterRute);
     fetch(vehicleFilterRute, {
         method: 'GET'
     }).then(function (respuesta) {
