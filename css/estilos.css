@@ -16,3 +16,15 @@
     background-color: #f2f2f2 ;
 }
 
+article{
+    max-height: 551px;
+}
+
+article img{
+    max-height: 226px;
+}
+
+.patrocinador img{
+    max-height: 300px;
+}
+

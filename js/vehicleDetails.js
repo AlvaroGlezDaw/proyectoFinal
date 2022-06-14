@@ -1,43 +1,36 @@
-let idVehicle=localStorage.getItem('idVehicleDetail');
-comprobarLogin();
-fetch("../../php/vehicleDetails.php",{
-    headers: {'Content-type': 'application/json'},
-    method: 'POST', 
-    body: JSON.stringify(idVehicle)
-}).then(function(respuesta) {
-    return respuesta.json(); 
-}).then(function(data) {
-    document.getElementById("imgCar").setAttribute("src","../../"+data.imagen);
-    document.getElementById("imgCar2").setAttribute("src","../../"+data.imagen);
-    document.getElementById("nombreVehiculo").textContent+=data.modelo;
-    document.getElementById("precioVehiculo").textContent+=data.precio +"€";
-    document.getElementById("fabricante").textContent+=data.marca;
-    document.getElementById("potencia").textContent+=data.potencia;
-    document.getElementById("cilindrada").textContent+=data.cilindrada;
-    document.getElementById("combustible").textContent+=data.combustible;
-    document.getElementById("cambio").textContent+=data.cambio;
-    document.getElementById("nPuertas").textContent+=data.nPuertas;
-    document.getElementById("color").textContent+=data.color;
-    document.getElementById("anno").textContent+=data.anno;
-    document.getElementById("descripcion").textContent +=" TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto";
+let choosenVehicle = JSON.parse(localStorage.getItem('choosenVehicle'));
+loginChangeNav();
 
-    if(data.segunda_mano==="yes"){
-        document.getElementById("buy").hidden=true;
-        document.getElementById("sellerDates").hidden=false;
+document.getElementById("imgCar").setAttribute("src", "../../" + choosenVehicle.imagen);
+document.getElementById("imgCar2").setAttribute("src", "../../" + choosenVehicle.imagen);
+document.getElementById("nombreVehiculo").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.modelo + "</mon>";
+document.getElementById("precioVehiculo").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.precio + "€</mon>";
+document.getElementById("fabricante").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.marca + "</mon>";
+document.getElementById("potencia").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.potencia + " CV</mon>";
+document.getElementById("cilindrada").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.cilindrada + "</mon>";
+document.getElementById("combustible").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.combustible + "</mon>";
+document.getElementById("cambio").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.cambio + "</mon>";
+document.getElementById("nPuertas").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.nPuertas + "</mon>";
+document.getElementById("color").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.color + "</mon>";
+document.getElementById("anno").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.anno + "</mon>";
+document.getElementById("descripcion").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.descripcion + "</mon>";
 
-        document.getElementById("sellerName").textContent+=data.datos_anunciante.nombre;
-        document.getElementById("sellerPhone").textContent+=data.datos_anunciante.telefono;
-        document.getElementById("sellerEmail").textContent+=data.datos_anunciante.email;
+if (choosenVehicle.segunda_mano === "yes") {
+    document.getElementById("buy").hidden = true;
+    document.getElementById("sellerDates").hidden = false;
+
+    document.getElementById("sellerName").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.datos_anunciante.nombre + "</mon>";
+    document.getElementById("sellerPhone").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.datos_anunciante.telefono + "</mon>";
+    document.getElementById("sellerEmail").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.datos_anunciante.email + "</mon>";
+    document.getElementById("sellerDirection").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.datos_anunciante.direccion + "</mon>";
+}
+
+
+document.getElementById("buy").addEventListener("click", () => {
+    if (localStorage.getItem('userLogued') !== null) {
+        window.location.href = "vehicleMethodPayment.html"
     }
-}).catch(function(ex) { 
-    console.error('Error', ex.message) 
+    else {
+        window.location.href = "login.html"
+    }
 });
-
-document.getElementById("buy").addEventListener("click", ()=>{
-    if(localStorage.getItem('userLogued')!==null){
-        window.location.href="vehicleMethodPayment.html"
-    }
-    else{
-        window.location.href="login.html"
-    }
-})

@@ -1,9 +1,5 @@
 function clickVehicleButton(vehicletype){
     localStorage.setItem('clickedVehicle', vehicletype);
-    document.getElementById("cars").style.borderWidth="0.25em";
-    document.getElementById("bikes").style.borderWidth="0.1em";
-    document.getElementById("cars").style.borderBlockColor="#6495ED";
-    document.getElementById("bikes").style.borderColor="#000";
     let brand = "";
     let fuel = "";
     let power = 50;
@@ -15,7 +11,6 @@ function clickVehicleButton(vehicletype){
 function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHand) {
     document.getElementById("main").innerHTML = "";
     let vehicleRute=checkVehicleType(vehicleType);
-    console.log(vehicleRute);
     fetch(vehicleRute, {
         method: 'POST',
         body: JSON.stringify([brand, fuel, power, price, secondHand])
@@ -37,8 +32,8 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
             clone.querySelector('.fuel').innerHTML += "<mon class='font-monospace'>" + data[i].combustible + "</mon>";
 
             clone.querySelector('article').addEventListener("click", () => {
-                let idVehicle = data[i]._id.$oid;
-                localStorage.setItem('idVehicleDetail', idVehicle);
+                //let idVehicle = data[i]._id.$oid;
+                localStorage.setItem('choosenVehicle',  JSON.stringify(data[i]));
             });
 
             //"colgamos" al objeto clone de algún elemento del DOM
@@ -51,7 +46,7 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
 
 function checkVehicleType(vehicleType){
     if(vehicleType==="cars"){
-        return "php/carss/cars.php"
+        return "php/cars.php"
     }
     else if(vehicleType==="bikes"){
         return "php/bikes.php"

@@ -1,16 +1,19 @@
 //null o admin
-if(localStorage.getItem('userLogued')!==null){
-comprobarLogin();
-let idCar=localStorage.getItem('idVehicleDetail');
-let userinfo=JSON.parse(localStorage.getItem('userLogued'));
+if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getItem('userLogued')).email !== "admin") {
+    loginChangeNav();
+    let choosenVehicle = JSON.parse(localStorage.getItem('choosenVehicle'));
 
-document.getElementById("idCar").setAttribute("value", idCar);
+    let userinfo = JSON.parse(localStorage.getItem('userLogued'));
 
-document.getElementById("userDataName").textContent=userinfo.nombre;
-document.getElementById("userEmail").textContent=userinfo.email;
-document.getElementById("userDirection").textContent=userinfo.direccion;
+    document.getElementById("idCar").setAttribute("value", choosenVehicle._id.$oid);
+    document.getElementById("vehiclePrice").innerHTML = choosenVehicle.precio + "€";
+
+    document.getElementById("userDataName").innerHTML += "<mon class='font-monospace'>" + userinfo.nombre + "</mon>";
+    document.getElementById("userDataLastName").innerHTML += "<mon class='font-monospace'>" + userinfo.nombre + "</mon>";
+    document.getElementById("userEmail").innerHTML += "<mon class='font-monospace'>" + userinfo.email + "</mon>";
+    document.getElementById("userDirection").innerHTML += "<mon class='font-monospace'>" + userinfo.direccion + "</mon>";
 
 }
-else{
-    window.location.href="../../index.html";
+else {
+    window.location.href = "../../index.html";
 }

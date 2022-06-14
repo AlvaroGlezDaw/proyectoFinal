@@ -20,6 +20,7 @@ $imagenes = $_POST['imageSecondHand'];
 $nameSeller = $_POST['nameSellerSecondHand'];
 $tfnoSeller = $_POST['tlfnoSellerSecondHand'];
 $emailSeller = $_POST['emailSellerSecondHand'];
+$directionSeller = $_POST['directionSellerSecondHand'];
 
 if($type==="coche")
     $vehicleCollection = $dbPruebas->cars;
@@ -34,7 +35,7 @@ else
 $vehicle = array("marca"=>$brand, "modelo"=>$model, "potencia"=>$power, "cilindrada"=> $cc, "cambio"=>$gear,
 "nPuertas"=> $nDoors, "color"=> $color, "combustible"=> $fuel, "anno"=> $year, "descripcion"=> $description,
 "precio"=> $price,  "imagen"=> "img/cars/Mazda-Mx5.jpg",  "offer"=> "no",  "segunda_mano"=> "yes", "datos_anunciante"=>array(
-    "nombre"=> $nameSeller, "telefono"=> $tfnoSeller, "email"=> $emailSeller
+    "nombre"=> $nameSeller, "telefono"=> $tfnoSeller, "email"=> $emailSeller, "direccion"=>$directionSeller
 ));
 
 //Convert Row (Document) to json
