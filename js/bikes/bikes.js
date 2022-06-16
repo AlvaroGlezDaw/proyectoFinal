@@ -1,5 +1,5 @@
 document.getElementById("bikes").addEventListener("click", () => {
     clickVehicleButton("bikes");
-    window.location='http://localhost/proyecto/';
+    window.location='index.html';
     localStorage.setItem('clickedVehicle', "bikes");
 });

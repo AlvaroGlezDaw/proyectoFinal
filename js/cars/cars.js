@@ -1,5 +1,6 @@
 document.getElementById("cars").addEventListener("click", () => {
     clickVehicleButton("cars");
-    window.location='http://localhost/proyecto/';
+    window.location='index.html';
+    console.log("hola2")
     localStorage.setItem('clickedVehicle', "cars");
 });

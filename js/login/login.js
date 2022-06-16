@@ -14,7 +14,7 @@ if (localStorage.getItem('userLogued') === null) {
                 if (data[0].password == password) {
                     document.getElementById("badPassword").setAttribute("class", "d-none");
                     localStorage.setItem('userLogued', JSON.stringify(data[0]));
-                    window.location.href = "http://localhost/proyecto/";
+                    window.location.href = "../../index.html";
                 }
                 else {
                     document.getElementById("badPassword").textContent = "La contraseña no coincide con el email";
