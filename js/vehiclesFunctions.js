@@ -51,6 +51,12 @@ function checkVehicleType(vehicleType){
     else if(vehicleType==="bikes"){
         return "php/bikes.php"
     }
+    else if(vehicleType==="trucks"){
+        return "php/trucks.php"
+    }
+    else if(vehicleType==="vans"){
+        return "php/vans.php"
+    }
     else{
         return "php/offers.php"
     }
@@ -99,6 +105,12 @@ function checkVehicleTypeFilter(vehicleType){
     }
     else if(vehicleType==="bikes"){
         return "php/bikesFilter.php"
+    }
+    else if(vehicleType==="trucks"){
+        return "php/trucksFilter.php"
+    }
+    else if(vehicleType==="vans"){
+        return "php/vansFilter.php"
     }
     else{
         return "php/offersFilter.php"
