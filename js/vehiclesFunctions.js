@@ -79,10 +79,10 @@ function fillNavVehicles(vehicleType, brand, fuel, power, price, secondHand) {
 
         clone.querySelector("#secondHandButton").addEventListener("click", ()=>{
             if(localStorage.getItem('userLogued')!==null){
-                window.location.href="http://localhost/proyecto/vistas/usuario/vehiculeSecondHandForm.html";
+                window.location.href="vistas/usuario/vehiculeSecondHandForm.html";
             }
             else{
-                window.location.href="http://localhost/proyecto/vistas/usuario/login.html";
+                window.location.href="vistas/usuario/login.html";
             }
         })
         

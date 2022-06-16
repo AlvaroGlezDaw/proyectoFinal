@@ -14,7 +14,7 @@ function loginChangeNav(){
 document.getElementById("logout").addEventListener("click", ()=>{
     localStorage.removeItem('userLogued');
     console.log(window.location.href);
-    if(window.location.href==="http://localhost/proyecto/"){
+    if(window.location.href==="index.html"){
         window.location.href="index.html";
     }
     else{
