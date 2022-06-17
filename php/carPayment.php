@@ -2,9 +2,20 @@
 include 'conexion.php';
 
 // Selecciona la colección llamada "cars" de la base de datos "pruebas"
-$vehicles = $dbPruebas->cars;
+$cars = $dbPruebas->cars;
+$bikes = $dbPruebas->bikes;
+$trucks = $dbPruebas->trucks;
+$vans = $dbPruebas->vans;
 
-$idVehicle=$_POST['idCar'];
+$vehicles=[];
+array_push($vehicles,$cars,$bikes,$trucks,$vans);
 
-$vehicles->deleteOne(['_id'=> new \MongoDB\BSON\ObjectId("$idVehicle")]);
+$idVehicle=$_POST['idVehicle'];
+
+foreach ($vehicles as $vehicle)
+{
+    $vehicle->deleteOne(['_id'=> new \MongoDB\BSON\ObjectId("$idVehicle")]);
+}
+
+header("Location: ../index.html");
 ?>

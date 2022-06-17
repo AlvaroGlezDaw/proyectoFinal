@@ -23,4 +23,6 @@ $row = \MongoDB\BSON\toPHP($bson);
 
 // Insert Record to Document
 $users->insertOne($row);
+
+header("Location: ../index.html");
 ?>
