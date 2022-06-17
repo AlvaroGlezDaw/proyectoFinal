@@ -18,24 +18,17 @@ if($criteriaVehicle!=null && $criteriaVehicle!=""){
 }
 
 $allOfferVehicles=[];
-foreach ($offerCars as $car)
-{
-    array_push($allOfferVehicles,$car);
-}
+$allOfferVehicles=crossVehicle($offerCars, $allOfferVehicles);
+$allOfferVehicles=crossVehicle($offerBikes, $allOfferVehicles);
+$allOfferVehicles=crossVehicle($offerTrucks, $allOfferVehicles);
+$allOfferVehicles=crossVehicle($offerVans,$allOfferVehicles);
 
-foreach ($offerBikes as $bike)
-{
-    array_push($allOfferVehicles,$bike);
-}
-
-foreach ($offerTrucks as $truck)
-{
-    array_push($allOfferVehicles,$truck);
-}
-
-foreach ($offerVans as $van)
-{
-    array_push($allOfferVehicles,$van);
+function crossVehicle($vehiclesToCross, $vehiclesInOffer){
+    foreach ($vehiclesToCross as $vehicle)
+    {
+        array_push($vehiclesInOffer,$vehicle);
+    }
+    return $vehiclesInOffer;
 }
 
 echo json_encode($allOfferVehicles);  

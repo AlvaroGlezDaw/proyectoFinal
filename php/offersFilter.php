@@ -15,36 +15,22 @@ $allVansBrands=searchBrandVehicle($vans);
 
 $brands=array();
 $i=0;
-foreach ($allCarBrands as $brand)
-{
-    if(!in_array($brand, $brands)){
-        $brands[$i]=$brand;
-        $i++;
+$brands=crossBrands($allCarBrands,$brands);
+$brands=crossBrands($allBikesBrands,$brands);
+$brands=crossBrands($allTrucksBrands,$brands);
+$brands=crossBrands($allVansBrands,$brands);
+
+function crossBrands($allVehicleBrands, $brands){
+    $i=sizeof($brands);
+    foreach ($allVehicleBrands as $brand)
+    {
+        if(!in_array($brand, $brands)){
+            $brands[$i]=$brand;
+            $i++;
+        }
     }
+    return $brands;
 }
 
-foreach ($allBikesBrands as $brand)
-{
-    if(!in_array($brand, $brands)){
-        $brands[$i]=$brand;
-        $i++;
-    }
-}
-
-foreach ($allTrucksBrands as $brand)
-{
-    if(!in_array($brand, $brands)){
-        $brands[$i]=$brand;
-        $i++;
-    }
-}
-
-foreach ($allVansBrands as $brand)
-{
-    if(!in_array($brand, $brands)){
-        $brands[$i]=$brand;
-        $i++;
-    }
-}
 echo json_encode($brands);
 ?>
