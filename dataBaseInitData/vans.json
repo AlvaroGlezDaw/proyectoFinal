@@ -1,0 +1,177 @@
+[{
+  "_id": {
+    "$oid": "62addb4ea6d68d6fa0dc994f"
+  },
+  "marca": "Volkswagen",
+  "modelo": "Volkswagen Multivan Premium DSG",
+  "potencia": 150,
+  "cilindrada": 1900,
+  "cambio": "Manual",
+  "nPuertas": 5,
+  "color": "Negra",
+  "combustible": "Diesel",
+  "anno": 2019,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 22650,
+  "imagenes": {
+    "imagen0": "vans/volkswagen-multivan-premium-dsg-front.jpg",
+    "imagen1": "vans/volkswagen-multivan-premium-dsg-back.jpg",
+    "imagen2": "vans/volkswagen-multivan-premium-dsg-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Antonio Rodriguez",
+    "telefono": 123456789,
+    "email": "anton@gmail.com",
+    "direccion": "CºHermanos pidal, Oviedo, Asturias"
+  }
+},{
+  "_id": {
+    "$oid": "62addda2a6d68d6fa0dc9950"
+  },
+  "marca": "Peugeot",
+  "modelo": "Peugeot-eTraveller",
+  "potencia": 122,
+  "cilindrada": 1500,
+  "cambio": "Manual",
+  "nPuertas": 5,
+  "color": "Blanco",
+  "combustible": "Diesel",
+  "anno": 2019,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 18600,
+  "imagenes": {
+    "imagen0": "vans/peugeot-eTraveller-front.jpg",
+    "imagen1": "vans/peugeot-eTraveller-back.jpg",
+    "imagen2": "vans/peugeot-eTraveller-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Pablo González",
+    "telefono": 456712983,
+    "email": "pablo@gmail.com",
+    "direccion": "Pola de siero, Siero, Asturias"
+  }
+},{
+  "_id": {
+    "$oid": "62ade021a6d68d6fa0dc9952"
+  },
+  "marca": "Volkswagen",
+  "modelo": "Volkswagen Transporter Furgón 2.0TDI",
+  "potencia": 110,
+  "cilindrada": 1400,
+  "cambio": "Manual",
+  "nPuertas": 5,
+  "color": "Blanco",
+  "combustible": "Gasolina",
+  "anno": 2019,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 10000,
+  "imagenes": {
+    "imagen0": "vans/Volkswagen Multivan 2.0tdi Scr-front.jpg",
+    "imagen1": "vans/Volkswagen Multivan 2.0tdi Scr-back.jpg",
+    "imagen2": "vans/Volkswagen Multivan 2.0tdi Scr-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Pepe Suarez",
+    "telefono": 987654321,
+    "email": "pepe@gmail.com",
+    "direccion": "Llanes, Asturias"
+  }
+},{
+  "_id": {
+    "$oid": "62ade2caa6d68d6fa0dc9953"
+  },
+  "marca": "Peugeot ",
+  "modelo": "Peugeot Expert Furgón Premium 1.5",
+  "potencia": 120,
+  "cilindrada": 1350,
+  "cambio": "Automatico",
+  "nPuertas": 4,
+  "color": "Blanco",
+  "combustible": "Gasolina",
+  "anno": 2018,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 25300,
+  "imagenes": {
+    "imagen0": "vans/volkswagen-transporter-front.jpg",
+    "imagen1": "vans/volkswagen-transporter-back.jpg",
+    "imagen2": "vans/volkswagen-transporter-in.jpg"
+  },
+  "offer": "yes",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ade38ca6d68d6fa0dc9954"
+  },
+  "marca": "Volkswagen ",
+  "modelo": "Volkswagen Multivan 2.0tdi Scr",
+  "potencia": 135,
+  "cilindrada": 1500,
+  "cambio": "Maual",
+  "nPuertas": 4,
+  "color": "Azul",
+  "combustible": "Hibrido",
+  "anno": 2021,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 43400,
+  "imagenes": {
+    "imagen0": "vans/Peugeot Expert Furgón Premium-front.jpg",
+    "imagen1": "vans/Peugeot Expert Furgón Premium-back.jpg",
+    "imagen2": "vans/Peugeot Expert Furgón Premium-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ade5caa6d68d6fa0dc9955"
+  },
+  "marca": "Peugeot ",
+  "modelo": "Peugeot Partner Tepee 1.6",
+  "potencia": 92,
+  "cilindrada": 1200,
+  "cambio": "Maual",
+  "nPuertas": 2,
+  "color": "Gris",
+  "combustible": "Diesel",
+  "anno": 2016,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 19500,
+  "imagenes": {
+    "imagen0": "vans/Peugeot-Partner-Tepee-1.6-front.jpg",
+    "imagen1": "vans/Peugeot-Partner-Tepee-1.6-back.jpg",
+    "imagen2": "vans/Peugeot-Partner-Tepee-1.6-in-jpg.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ade668a6d68d6fa0dc9956"
+  },
+  "marca": "Volkswagen ",
+  "modelo": "Volkswagen Caravelle Comercial 2.0TDI",
+  "potencia": 175,
+  "cilindrada": 1600,
+  "cambio": "Maual",
+  "nPuertas": 2,
+  "color": "Rojo",
+  "combustible": "Gasolina",
+  "anno": 2017,
+  "descripcion": "Furgoneta nueva, con itv pasada y bien cuidada",
+  "precio": 36420,
+  "imagenes": {
+    "imagen0": "vans/Volkswagen-Caravelle-Comercial-2.0TDI-front.jpg",
+    "imagen1": "vans/Volkswagen-Caravelle-Comercial-2.0TDI-back.jpg",
+    "imagen2": "vans/Volkswagen-Caravelle-Comercial-2.0TDI-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+}]

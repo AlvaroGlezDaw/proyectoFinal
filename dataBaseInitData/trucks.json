@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "6256d3003819f2fc90d5ec62"
+  },
+  "marca": "Volkswagen",
+  "modelo": "Volkswagen-constellation",
+  "potencia": 275,
+  "cilindrada": 3000,
+  "cambio": "Manual",
+  "nPuertas": 2,
+  "color": "Blanco",
+  "combustible": "Gasolina",
+  "anno": 2020,
+  "descripcion": "Nuevo camion",
+  "precio": 60000,
+  "imagenes": {
+    "imagen0": "trucks/Volkswagen-constellation-front.jpg",
+    "imagen1": "trucks/Volkswagen-constellation-out.jpg",
+    "imagen2": "trucks/Volkswagen-constellation-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ae1ceba6d68d6fa0dc9975"
+  },
+  "marca": "Iveco",
+  "modelo": "Iveco-sway",
+  "potencia": 265,
+  "cilindrada": 2800,
+  "cambio": "Manual",
+  "nPuertas": 2,
+  "color": "Rojo",
+  "combustible": "Gasolina",
+  "anno": 2017,
+  "descripcion": "Nuevo camion",
+  "precio": 53000,
+  "imagenes": {
+    "imagen0": "trucks/iveco-sway-front.jpg",
+    "imagen1": "trucks/iveco-sway-out.jpg",
+    "imagen2": "trucks/iveco-sway-in.jpg"
+  },
+  "offer": "yes",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+}]

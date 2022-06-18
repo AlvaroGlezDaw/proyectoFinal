@@ -1,0 +1,177 @@
+[{
+  "_id": {
+    "$oid": "6256d3003819f2fc90d5ec62"
+  },
+  "marca": "Peugeot",
+  "modelo": "Peugeot 208-e",
+  "potencia": 152,
+  "cilindrada": 1900,
+  "cambio": "Automatico",
+  "nPuertas": 5,
+  "color": "Azul",
+  "combustible": "Electrico",
+  "anno": 2021,
+  "descripcion": "Peugeot Electrico nuevo",
+  "precio": 45000,
+  "imagenes": {
+    "imagen0": "cars/Peugeot-208-e-front.jpg",
+    "imagen1": "cars/Peugeot-208-e-side.jpg",
+    "imagen2": "cars/Peugeot-208-e-front.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "6256d1383819f2fc90d5ec60"
+  },
+  "marca": "Mazda",
+  "modelo": "Mazda-6 2.5 Skyactiv-g",
+  "potencia": 256,
+  "cilindrada": 2488,
+  "cambio": "Automatico",
+  "nPuertas": 5,
+  "color": "Rojo",
+  "combustible": "Gasolina",
+  "anno": 2017,
+  "descripcion": "",
+  "precio": 43000,
+  "imagenes": {
+    "imagen0": "cars/Mazda-6 2.5 Skyactiv-g-front.jpg",
+    "imagen1": "cars/Mazda-6 2.5 Skyactiv-g-back.jpg",
+    "imagen2": "cars/Mazda-6 2.5 Skyactiv-g-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "6256cf963819f2fc90d5ec5e"
+  },
+  "marca": "Mazda",
+  "modelo": "Mazda RX-7",
+  "potencia": 239,
+  "cilindrada": 1960,
+  "cambio": "Manual",
+  "nPuertas": 2,
+  "color": "Amarillo",
+  "combustible": "Gasolina",
+  "anno": 1997,
+  "descripcion": "",
+  "precio": 32000,
+  "imagenes": {
+    "imagen0": "cars/mazda-rx-7-front.jpg",
+    "imagen1": "cars/mazda-rx-7-back.jpg",
+    "imagen2": "cars/mazda-rx-7-in.jpg"
+  },
+  "offer": "yes",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62a64e758dba9c4690088439"
+  },
+  "marca": "Opel",
+  "modelo": "Opel astra 1.6 turbo",
+  "potencia": 156,
+  "cilindrada": 1300,
+  "cambio": "Automatico",
+  "nPuertas": 5,
+  "color": "rojo",
+  "combustible": "Gasolina",
+  "anno": 2001,
+  "descripcion": "Coche semi-nuevo",
+  "precio": 10400,
+  "imagenes": {
+    "imagen0": "cars/Opel astra 1.6 turbo-front.jpg",
+    "imagen1": "cars/Opel astra 1.6 turbo-back.jpg",
+    "imagen2": "cars/Opel astra 1.6 turbo-in-jpg.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "AGC",
+    "telefono": 123132123,
+    "email": "AGC@gmail.com",
+    "direccion": "Calle les Peñes, Granda, Siero"
+  }
+},{
+  "_id": {
+    "$oid": "62adf337a6d68d6fa0dc9959"
+  },
+  "marca": "Volkswagen",
+  "modelo": "Volkswagen Golf 2.0 TSI GTI ",
+  "potencia": 182,
+  "cilindrada": 1960,
+  "cambio": "Manual",
+  "nPuertas": 5,
+  "color": "Amarillo",
+  "combustible": "Diesel",
+  "anno": 2007,
+  "descripcion": "Coche nuevo",
+  "precio": 32000,
+  "imagenes": {
+    "imagen0": "cars/VOLKSWAGEN Golf 2.0 TSI GTI-front.jpg",
+    "imagen1": "cars/VOLKSWAGEN Golf 2.0 TSI GTI-back.jpg",
+    "imagen2": "cars/VOLKSWAGEN Golf 2.0 TSI GTI-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62adf654a6d68d6fa0dc995f"
+  },
+  "marca": "Hyundai",
+  "modelo": "Hyundai Tucson 1.6 TGDi",
+  "potencia": 186,
+  "cilindrada": 1300,
+  "cambio": "Manual",
+  "nPuertas": 5,
+  "color": "Azul",
+  "combustible": "Gasolina",
+  "anno": 2016,
+  "descripcion": "Coche semi-nuevo",
+  "precio": 25780,
+  "imagenes": {
+    "imagen0": "cars/HYUNDAI Tucson 1.6 TGDi-front.jpg",
+    "imagen1": "cars/HYUNDAI Tucson 1.6 TGDi-back.jpg",
+    "imagen2": "cars/HYUNDAI Tucson 1.6 TGDi-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Maria",
+    "telefono": 555666777,
+    "email": "maria@gmail.com",
+    "direccion": "Oviedo, Asturias"
+  }
+},{
+  "_id": {
+    "$oid": "62adf6a1a6d68d6fa0dc9962"
+  },
+  "marca": "Mini",
+  "modelo": "Mini Cooper Aut",
+  "potencia": 121,
+  "cilindrada": 1200,
+  "cambio": "Automatico",
+  "nPuertas": 5,
+  "color": "Verde",
+  "combustible": "Gasolina",
+  "anno": 2015,
+  "descripcion": "Coche semi-nuevo",
+  "precio": 19999,
+  "imagenes": {
+    "imagen0": "cars/Mini Cooper Aut-front.jpg",
+    "imagen1": "cars/Mini Cooper Aut-back.jpg",
+    "imagen2": "cars/Mini Cooper Aut-in.jpg"
+  },
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Lucia",
+    "telefono": 236666777,
+    "email": "lu23@gmail.com",
+    "direccion": "La tenderina, Oviedo, Asturias"
+  }
+}]

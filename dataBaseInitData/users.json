@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "62a4a755e4c0e060004dafa0"
+  },
+  "nombre": "Alvaro Admin",
+  "email": "admin",
+  "password": "admin",
+  "direccion": null,
+  "role": "Admin"
+},{
+  "_id": {
+    "$oid": "62a4a7d3e4c0e060004dafa2"
+  },
+  "nombre": "User1",
+  "email": "u1@gmail.com",
+  "password": "u1",
+  "direccion": "Cº Santa Susana, Oviedo",
+  "role": "user"
+},{
+  "_id": {
+    "$oid": "62a4a7efe4c0e060004dafa3"
+  },
+  "nombre": "User2",
+  "email": "u2@gmail.com",
+  "password": "u2",
+  "direccion": "Cº Santa Susana, Oviedo",
+  "role": "user"
+},{
+  "_id": {
+    "$oid": "62a8b2d8b37ad6b2a5d7dcd1"
+  },
+  "nombre": "Alvaro",
+  "email": "alvaro@gmail.com",
+  "password": "1234",
+  "direccion": "Calle Les Peñes",
+  "role": "user"
+}]

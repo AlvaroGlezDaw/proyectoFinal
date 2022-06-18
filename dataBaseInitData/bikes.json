@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "628a65e939125aa5070584f9"
+  },
+  "marca": "kawasaki",
+  "modelo": "kawasaki-ninja-40",
+  "potencia": 145,
+  "cilindrada": 399,
+  "cambio": "Manual",
+  "color": "Verde",
+  "combustible": "Gasolina",
+  "anno": 2020,
+  "descripcion": "Moto",
+  "imagenes": {
+    "imagen0": "bikes/kawasaki-ninja-40-side.jpg",
+    "imagen1": "bikes/kawasaki-ninja-40-front.jpg",
+    "imagen2": "bikes/kawasaki-ninja-40-otherSide.jpg"
+  },
+  "precio": 6599,
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Nacho",
+    "telefono": 123132123,
+    "email": "nacho@gmail.com",
+    "direccion": "Calle los Prados, Oviedo, Asturias"
+  }
+},{
+  "_id": {
+    "$oid": "628a663939125aa5070584fb"
+  },
+  "marca": "Yamaha",
+  "modelo": "yamaha-r15",
+  "potencia": 92,
+  "cilindrada": 165,
+  "cambio": "Manual",
+  "color": "Azul",
+  "combustible": "Gasolina",
+  "anno": 2016,
+  "descripcion": "Moto",
+  "imagenes": {
+    "imagen0": "bikes/yamaha-R15-back.jpg",
+    "imagen1": "bikes/yamaha-R15-front.jpg",
+    "imagen2": "bikes/yamaha-R15-side.jpg"
+  },
+  "precio": 7000,
+  "offer": "yes",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ae00c1a6d68d6fa0dc9969"
+  },
+  "marca": "kawasaki",
+  "modelo": "kawasaki z900rs",
+  "potencia": 96,
+  "cilindrada": 175,
+  "cambio": "Manual",
+  "color": "Negra",
+  "combustible": "Diesel",
+  "anno": 2018,
+  "descripcion": "Moto",
+  "imagenes": {
+    "imagen0": "bikes/kawasaki z900rs-front.jpg",
+    "imagen1": "bikes/kawasaki z900rs-side.jpg",
+    "imagen2": "bikes/kawasaki z900rs-in.jpg"
+  },
+  "precio": 8000,
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ae00d6a6d68d6fa0dc996b"
+  },
+  "marca": "Yamaha",
+  "modelo": "yamaha-YZ-450FX",
+  "potencia": 92,
+  "cilindrada": 449,
+  "cambio": "Manual",
+  "color": "Azul",
+  "combustible": "Gasolina",
+  "anno": 2019,
+  "descripcion": "Moto",
+  "imagenes": {
+    "imagen0": "bikes/YZ-450FX-front-jpg.jpg",
+    "imagen1": "bikes/YZ-450FX-back.jpg",
+    "imagen2": "bikes/YZ-450FX-side.jpg"
+  },
+  "precio": 9249,
+  "offer": "no",
+  "segunda_mano": "no",
+  "datos_anunciante": null
+},{
+  "_id": {
+    "$oid": "62ae00e5a6d68d6fa0dc996c"
+  },
+  "marca": "Honda",
+  "modelo": "Honda CRF 450",
+  "potencia": 92,
+  "cilindrada": 165,
+  "cambio": "Manual",
+  "color": "Roja",
+  "combustible": "Gasolina",
+  "anno": 2015,
+  "descripcion": "Moto",
+  "imagenes": {
+    "imagen0": "bikes/HONDA CRF 450-front-jpg.jpg",
+    "imagen1": "bikes/HONDA CRF 450-back.jpg",
+    "imagen2": "bikes/HONDA CRF 450-side.jpg"
+  },
+  "precio": 4500,
+  "offer": "no",
+  "segunda_mano": "yes",
+  "datos_anunciante": {
+    "nombre": "Alberto",
+    "telefono": 675801238,
+    "email": "albert@gmail.com",
+    "direccion": "Girona, Catalunya"
+  }
+}]
