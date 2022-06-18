@@ -71,7 +71,7 @@
 
                     <div class="form-group row col-10">
                         <label for="brandSecondHand">Marca</label>
-                        <input class="form-control" type="text" name="brandSecondHand" required>
+                        <input class="form-control" type="text" name="brandSecondHand" maxlength="15" required>
                     </div>
 
                     <div class="form-group row col-10">
@@ -86,12 +86,12 @@
 
                     <div class="form-group row col-5">
                         <label for="powerSecondHand">Potencia</label>
-                        <input class="form-control col-2" type="text" name="powerSecondHand" required>
+                        <input class="form-control col-2" type="number" name="powerSecondHand" step="10"    min="0" max="500" required>
                     </div>
 
                     <div class="form-group row col-5">
                         <label for="ccSecondHand">Cilindrada</label>
-                        <input class="form-control" type="number" name="ccSecondHand" min="1000" step="100" required>
+                        <input class="form-control" type="number" name="ccSecondHand" min="1000" max="4000" step="100" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -109,7 +109,7 @@
 
                     <div class="form-group row col-5">
                         <label for="colorSecondHand">Color</label>
-                        <input class="form-control" type="text" name="colorSecondHand" required>
+                        <input class="form-control" type="text" name="colorSecondHand" maxlength="10" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -124,7 +124,7 @@
 
                     <div class="form-group row col-5">
                         <label for="PriceSecondHand">Precio</label>
-                        <input class="form-control" type="number" name="PriceSecondHand" min="0" max="200000" required>
+                        <input class="form-control" type="number" name="PriceSecondHand" step="500" min="0" max="200000" required>
                     </div>
                     
                     <div class="form-group row col-10">
@@ -144,12 +144,12 @@
 
                     <div class="form-group row col-10 mb-3">
                         <label for="nameSellerSecondHand">Nombre</label>
-                        <input class="form-control" type="text" name="nameSellerSecondHand" required>
+                        <input class="form-control" type="text" name="nameSellerSecondHand" maxlength="30" required>
                     </div>
 
                     <div class="form-group row col-10 mb-3">
-                        <label for="tlfnoSellerSecondHand">Teléfono</label>
-                        <input class="form-control" type="text" name="tlfnoSellerSecondHand" required>
+                        <label for="tlfnoSellerSecondHand">Teléfono</label> 
+                        <input class="form-control" type="number" name="tlfnoSellerSecondHand" required>
                     </div>
 
                     <div class="form-group row col-10 mb-3">
@@ -159,7 +159,7 @@
 
                     <div class="form-group row col-10">
                         <label for="directionSellerSecondHand">Dirección</label>
-                        <input class="form-control" type="text" name="directionSellerSecondHand" required>
+                        <input class="form-control" type="text" name="directionSellerSecondHand" maxlength="50" required>
                     </div>
                 </div>
 

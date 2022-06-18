@@ -66,10 +66,10 @@
               <form name="payVehicle" class="row col-12 m-0" action="../../php/carPayment.php" method="post">
                     <input class="mb-3 p-3" type="text" name="target" placeholder="Número de la tarjeta" minlength="16" maxlength="16" required>
                           
-                    <input class="col-5 me-4 p-3" id="monthExpired" type="number" name="monthExpired" placeholder="mes caducidad" value="" min="01" max="12" required minlength="2" maxlength="2">
-                    <input class="col-5 p-3" id="yearExpired" type="number" name="yearExpired" placeholder="año caducidad" value="" required minlength="4" maxlength="4">
+                    <input class="col-5 me-4 p-3" id="monthExpired" type="text" name="monthExpired" placeholder="mes caducidad" value="" min="01" max="12" required minlength="2" maxlength="2">
+                    <input class="col-5 p-3" id="yearExpired" type="text" name="yearExpired" placeholder="año caducidad" value="" required minlength="4" maxlength="4">
 
-                    <input class="col-6 p-3 my-3" id="backDigits" type="number" name="backDigits" placeholder="cod seguridad" value="" minlength="3" maxlength="3" required>
+                    <input class="col-6 p-3 my-3" id="backDigits" type="text" name="backDigits" placeholder="cod seguridad" value="" minlength="3" maxlength="3" required>
                     <label class="col-6 text-secondary my-3" for="backDigits">3 o 4 digitos de la parte trasera de la tarjeta</label>
 
                     <input id="idVehicle" type="hidden" name="idVehicle" value="">

@@ -82,10 +82,14 @@
                 <div class="row col-12 mb-5" style="height: 100px;">
                     <label for="powerFilter" class="form-label col-12 text-info fs-4 fw-light fst-italic mb-0 ps-0">Potencia</label>
                     <hr class="mb-3">
-                    <input type="range" class="form-range col-12 text-light" id="powerFilter" value="50" step="40" min="50"
-                        max="400">
-                    <label for="" class="pull-left col-6 text-light">50cv</label>
-                    <label for="" class="pull-right col-6 text-end text-light">400cv</label>
+                    <input type="range" class="form-range col-12 text-light" id="powerFilter" value="50" step="10" min="50"
+                        max="400" oninput="powerFilterOutput.value = powerFilter.value">
+                    <label for="" class="pull-left col-3 text-light">50cv</label>
+                    <span class="offset-1 col-5 text-info   ">
+                        <output class="text-info" name="powerFilterOutput" id="powerFilterOutput">0</output>
+                        CV
+                    </span>
+                    <label for="" class="pull-right col-3 text-end text-light">400cv</label>
                 </div>
 
                 <div class="row col-12 mb-5" style="height: 100px;">
@@ -114,9 +118,13 @@
                     <label for="priceFilter" class="form-label col-12 text-info fs-4 fw-light fst-italic mb-0 ps-0">Precio</label>
                     <hr class="mb-3">
                     <input type="range" list="tickmarks" class="form-range col-12 text-light" id="priceFilter" value="0"
-                        step="2000" min="0" max="200000">
-                    <label for="" class="pull-left col-6 text-light">0€</label>
-                    <label for="" class="pull-right col-6 text-end text-light">200000€</label>
+                        step="500" min="0" max="100000" oninput="priceFilterOutput.value = priceFilter.value">
+                        <label for="" class="pull-left col-3 text-light">0€</label>
+                        <span class="offset-1 col-5 text-info   ">
+                            <output class="text-info" name="priceFilterOutput" id="priceFilterOutput">0</output>
+                            €
+                        </span>
+                    <label for="" class="pull-right col-3 text-end text-light">100000</label>
                 </div>
             </template>
 
