@@ -17,27 +17,46 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
     }).then(function (respuesta) {
         return respuesta.json();
     }).then(function (data) {
-        for (let i = 0; i < data.length; i++) {
-            //Clonamos la plantilla
-            let template = document.getElementById('vehicle-main').content;
-            let clone = template.cloneNode(true);
+        if(data.length>0){
+            for (let i = 0; i < data.length; i++) {
+                //Clonamos la plantilla
+                let template = document.getElementById('vehicle-main').content;
+                let clone = template.cloneNode(true);
 
-            //Hacemos las modificaciones sobre el objeto clone
-            clone.querySelector('.image-vehicle').setAttribute("src", "img/"+data[i].imagenes.imagen0);
+                //Hacemos las modificaciones sobre el objeto clone
+                clone.querySelector('.image-vehicle').setAttribute("src", "img/"+data[i].imagenes.imagen0);
 
-            clone.querySelector('.model').textContent += data[i].modelo;
-            clone.querySelector('.price').textContent += data[i].precio + "€";
-            clone.querySelector('.maker').innerHTML += "<mon class='font-monospace'>" + data[i].marca + "</mon>";
-            clone.querySelector('.power').innerHTML += "<mon class='font-monospace'>" + data[i].potencia + " CV</mon>";
-            clone.querySelector('.fuel').innerHTML += "<mon class='font-monospace'>" + data[i].combustible + "</mon>";
+                clone.querySelector('.model').textContent += data[i].modelo;
+                clone.querySelector('.price').textContent += data[i].precio + "€";
+                clone.querySelector('.maker').innerHTML += "<mon class='font-monospace'>" + data[i].marca + "</mon>";
+                clone.querySelector('.power').innerHTML += "<mon class='font-monospace'>" + data[i].potencia + " CV</mon>";
+                clone.querySelector('.fuel').innerHTML += "<mon class='font-monospace'>" + data[i].combustible + "</mon>";
 
-            clone.querySelector('article').addEventListener("click", () => {
-                //let idVehicle = data[i]._id.$oid;
-                localStorage.setItem('choosenVehicle',  JSON.stringify(data[i]));
-            });
+                clone.querySelector('article').addEventListener("click", () => {
+                    //let idVehicle = data[i]._id.$oid;
+                    localStorage.setItem('choosenVehicle',  JSON.stringify(data[i]));
+                });
 
-            //"colgamos" al objeto clone de algún elemento del DOM
-            document.querySelector('.vehicles').appendChild(clone);
+                //"colgamos" al objeto clone de algún elemento del DOM
+                document.querySelector('.vehicles').appendChild(clone);
+            }
+        }
+        else{
+            let noDataContainer=document.createElement("div");
+            noDataContainer.setAttribute("class", "col-8 text-center border border-secondary border-3 ms-4 py-3 h-50");
+
+            let noData=document.createElement("p");
+            noData.setAttribute("class", "text-dark fs-4");
+            noData.innerHTML="Lo sentimos, no hay vehiculos disponibles para esta busqueda";
+
+            let noDataImage=document.createElement("img");
+            noDataImage.setAttribute("class", "img-fluid rounded");
+            noDataImage.setAttribute("src", "img/vegeta.gif");
+            
+            noDataContainer.appendChild(noData);
+            noDataContainer.appendChild(noDataImage);
+
+            document.getElementById("main").appendChild(noDataContainer);
         }
     }).catch(function (ex) {
         console.log("Error", ex.mesagge)
