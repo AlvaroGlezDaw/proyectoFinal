@@ -27,3 +27,5 @@ else{
     document.getElementById("offers").setAttribute("class", (document.getElementById("offers").getAttribute("class") + " border-4"));
     clickVehicleButton("offers");
 }
+
+console.log(window.location.href);

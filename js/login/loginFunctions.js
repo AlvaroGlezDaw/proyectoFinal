@@ -13,8 +13,7 @@ function loginChangeNav(){
 
 document.getElementById("logout").addEventListener("click", ()=>{
     localStorage.removeItem('userLogued');
-    console.log(window.location.href);
-    if(window.location.href==="index.html"){
+    if((window.location.href).includes("index.html")){
         window.location.href="index.html";
     }
     else{
