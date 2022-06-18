@@ -14,7 +14,7 @@ $fuel = $_POST['FuelSecondHand'];
 $year = $_POST['yearSecondHand'];
 $description = $_POST['descriptionSecondHand'];
 $price = $_POST['PriceSecondHand'];
-$imagenes = $_POST['imageSecondHand'];
+$imagenes = $_FILES['imageSecondHand']['name'];
 
 //Datos vendedor
 $nameSeller = $_POST['nameSellerSecondHand'];
@@ -31,23 +31,57 @@ else if($type==="furgoneta")
 else
     $vehicleCollection = $dbPruebas->trucks;
 
+$saveImages=false;
+for( $i=0 ; $i < sizeof($imagenes) ; $i++ ) {
+    $imagenes["imagen$i"] = $imagenes[$i]; 
+    unset($imagenes[$i]);
+    $ruta=$_FILES['imageSecondHand']['tmp_name'][$i];
+    if($type==="coche"){
+        $imagenes["imagen$i"]="cars/". $imagenes["imagen$i"];
+        $destino="C:/xampp/htdocs/proyecto/img/" . $imagenes["imagen$i"];
+        print_r($destino);
+        if(move_uploaded_file($ruta, $destino))
+            $saveImages=true;
+    }
+    else if($type==="moto"){
+        $imagenes["imagen$i"]="bikes/". $imagenes["imagen$i"];
+        $destino="C:/xampp/htdocs/proyecto/img/" . $imagenes["imagen$i"];
+        if(move_uploaded_file($ruta, $destino))
+            $saveImages=true;
+    }
+    else if($type==="furgoneta"){
+        $imagenes["imagen$i"]="vans/". $imagenes["imagen$i"];
+        $destino="C:/xampp/htdocs/proyecto/img/" . $imagenes["imagen$i"];
+        if(move_uploaded_file($ruta, $destino))
+            $saveImages=true;
+    }
+    else{
+        $imagenes["imagen$i"]="trucks/". $imagenes["imagen$i"];
+        $destino="C:/xampp/htdocs/proyecto/img/" . $imagenes["imagen$i"];
+        if(move_uploaded_file($ruta, $destino))
+            $saveImages=true;
+    }
+}
 
-$vehicle = array("marca"=>$brand, "modelo"=>$model, "potencia"=>$power, "cilindrada"=> $cc, "cambio"=>$gear,
-"nPuertas"=> $nDoors, "color"=> $color, "combustible"=> $fuel, "anno"=> $year, "descripcion"=> $description,
-"precio"=> $price,  "imagen"=> "img/cars/Mazda-Mx5.jpg",  "offer"=> "no",  "segunda_mano"=> "yes", "datos_anunciante"=>array(
-    "nombre"=> $nameSeller, "telefono"=> $tfnoSeller, "email"=> $emailSeller, "direccion"=>$directionSeller
-));
+if($saveImages){
+    $vehicle = array("marca"=>$brand, "modelo"=>$model, "potencia"=>$power, "cilindrada"=> $cc, "cambio"=>$gear,
+    "nPuertas"=> $nDoors, "color"=> $color, "combustible"=> $fuel, "anno"=> $year, "descripcion"=> $description,
+    "precio"=> $price,  "imagenes"=> $imagenes,  "offer"=> "no",  "segunda_mano"=> "yes", "datos_anunciante"=>array(
+        "nombre"=> $nameSeller, "telefono"=> $tfnoSeller, "email"=> $emailSeller, "direccion"=>$directionSeller
+    ));
 
-//Convert Row (Document) to json
-$vehicle=json_encode($vehicle, JSON_NUMERIC_CHECK);
+    //Convert Row (Document) to json
+    $vehicle=json_encode($vehicle, JSON_NUMERIC_CHECK);
 
-//Convert JSON to BSON
-$bson = \MongoDB\BSON\fromJSON($vehicle);
+    //Convert JSON to BSON
+    $bson = \MongoDB\BSON\fromJSON($vehicle);
 
-//Convert BSON to PHP Std Class object
-$row = \MongoDB\BSON\toPHP($bson);
+    //Convert BSON to PHP Std Class object
+    $row = \MongoDB\BSON\toPHP($bson);
 
 
-// Insert Record to Document
-$vehicleCollection->insertOne($row);
+    // Insert Record to Document
+    $vehicleCollection->insertOne($row);
+}
+header("Location: ../index.html");
 ?>

@@ -23,7 +23,7 @@ function getVehiclesByCriteria(vehicleType, brand, fuel, power, price, secondHan
             let clone = template.cloneNode(true);
 
             //Hacemos las modificaciones sobre el objeto clone
-            clone.querySelector('.image-vehicle').setAttribute("src", data[i].imagen);
+            clone.querySelector('.image-vehicle').setAttribute("src", "img/"+data[i].imagenes.imagen0);
 
             clone.querySelector('.model').textContent += data[i].modelo;
             clone.querySelector('.price').textContent += data[i].precio + "€";

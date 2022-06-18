@@ -1,8 +1,23 @@
 let choosenVehicle = JSON.parse(localStorage.getItem('choosenVehicle'));
 loginChangeNav();
 
-document.getElementById("imgCar").setAttribute("src", "../../" + choosenVehicle.imagen);
-document.getElementById("imgCar2").setAttribute("src", "../../" + choosenVehicle.imagen);
+for(let i=0;i<Object.keys(choosenVehicle.imagenes).length;i++){
+    let divContainer=document.createElement("div");
+    if(i==0){
+        divContainer.setAttribute("class", "carousel-item active h-100");
+    }
+    else{
+        divContainer.setAttribute("class", "carousel-item h-100");
+    }
+
+    let imageContainer=document.createElement("img");
+    imageContainer.setAttribute("id", "imgCar"+i);
+    imageContainer.setAttribute("class", "img-fluid h-100 rounded-start");
+    imageContainer.setAttribute("src", "../../img/" + choosenVehicle.imagenes["imagen"+i]);
+    
+    divContainer.appendChild(imageContainer);
+    document.getElementById("carouselImages").appendChild(divContainer);
+}
 document.getElementById("nombreVehiculo").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.modelo + "</mon>";
 document.getElementById("precioVehiculo").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.precio + "€</mon>";
 document.getElementById("fabricante").innerHTML += "<mon class='font-monospace'>" + choosenVehicle.marca + "</mon>";

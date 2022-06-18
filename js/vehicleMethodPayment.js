@@ -23,6 +23,8 @@ else {
     window.location.href = "../../index.html";
 }
 
+//Funcion que manda un email a "Elastic email".
+//Configurada mediante un token creado por https://smtpjs.com/ y utilizando un servidor "smtp" en "Elastic email"
 function sendEmail(userEmail, brandVehicle) {
     Email.send({
         SecureToken : "4b239979-0b0b-4b07-ba2d-a6e175878bae",

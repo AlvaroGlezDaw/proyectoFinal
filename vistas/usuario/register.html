@@ -52,22 +52,26 @@
             <form id="registerForm" method="POST" action="../../php/register.php" class="row col-6 border border-dark p-4">
                 <div class="row mb-4">
                     <label class="text-dark" for="userRegisterName">Nombre:</label>
-                    <input id="userRegisterName" class="p-2" type="text" name="userRegisterName" value="" required>
+                    <input id="userRegisterName" class="p-2" type="text" name="userRegisterName" value="" maxlength="20" required>
+                    <label id="badUserRegister" class="text-danger d-none"></label>
                 </div>
 
                 <div class="row mb-4">
                     <label class="text-dark" for="userRegisterPassword">Password:</label>
                     <input id="userRegisterPassword" class="p-2" type="password" name="userRegisterPassword" value="" required>
+                    <label id="badPasswordRegister" class="text-danger d-none"></label>
                 </div>
 
                 <div class="row mb-4">
                     <label class="text-dark" for="userRegisterEmail">Email:</label>
                     <input id="userRegisterEmail" class="p-2" type="email" name="userRegisterEmail" value="" required>
+                    <label id="badEmailRegister" class="text-danger d-none"></label>
                 </div>
 
                 <div class="row mb-4">
                     <label class="text-dark" for="userRegisterDirection">Dirección:</label>
                     <input id="userRegisterDirection" class="p-2" type="text" name="userRegisterDirection" value="" required>
+                    <label id="badRegisterDirection" class="text-danger d-none"></label>
                 </div>
                 <div>
                     <button id="buttonRegister" type="submit" class="btn btn-success offset-7 col-4 p-2">Registrarse</button>
