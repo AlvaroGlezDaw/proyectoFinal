@@ -18,14 +18,16 @@ if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getIt
         localStorage.setItem('showAdminTypeVehicle', "vans");
         window.location='homeAdmin.html';
     });
-    document.getElementById("newVehicleAdmin").addEventListener("click", ()=>{
-        window.location.href="createVehicle.html";
-    })
 
     document.getElementById("allUsersAdmin").addEventListener("click", ()=>{
         localStorage.setItem('showAdminTypeVehicle', "users");
         window.location='homeAdmin.html';
     })
+    
+    document.getElementById("newVehicleAdmin").addEventListener("click", ()=>{
+        window.location.href="createVehicle.html";
+    })
+
 }
 else{
     window.location.href = "../../index.html";

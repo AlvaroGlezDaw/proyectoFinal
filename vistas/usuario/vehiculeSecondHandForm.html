@@ -86,7 +86,7 @@
 
                     <div class="form-group row col-5">
                         <label for="powerSecondHand">Potencia</label>
-                        <input class="form-control col-2" type="number" name="powerSecondHand" step="10"    min="0" max="500" required>
+                        <input class="form-control col-2" type="number" name="powerSecondHand" min="0" max="500" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -104,7 +104,7 @@
 
                     <div class="form-group row col-5">
                         <label for="nDoorsSecondHand">Numero de puertas</label>
-                        <input class="form-control" type="number" name="nDoorsSecondHand" value="2" min="2" max="5" required>
+                        <input class="form-control" type="number" name="nDoorsSecondHand" value="2" min="2" max="7" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -129,7 +129,7 @@
                     
                     <div class="form-group row col-10">
                         <label for="">Imagenes</label>
-                        <input class="form-control" type="file" name="imageSecondHand[]" multiple accept="image/png, image/jpg, image/jpeg">
+                        <input class="form-control" type="file" name="imageSecondHand[]" multiple accept="image/png, image/jpg, image/jpeg" required>
                     </div>
                     
                     <div class="form-group row col-10">
@@ -149,7 +149,7 @@
 
                     <div class="form-group row col-10 mb-3">
                         <label for="tlfnoSellerSecondHand">Teléfono</label> 
-                        <input class="form-control" type="number" name="tlfnoSellerSecondHand" required>
+                        <input class="form-control" type="text" name="tlfnoSellerSecondHand" minlength="9" maxlength="9" required>
                     </div>
 
                     <div class="form-group row col-10 mb-3">

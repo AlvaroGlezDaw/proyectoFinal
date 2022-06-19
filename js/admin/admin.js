@@ -100,7 +100,7 @@ if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getIt
                 listItem.setAttribute("id", data[i]._id.$oid);
                 listItem.setAttribute("class", "list-group-item");
 
-                listItem.innerHTML = data[i].nombre + " | Email: " + data[i].email ;
+                listItem.innerHTML = "Nombre de usuario: " + data[i].nombre + " | Email: " + data[i].email ;
 
                 listUsers.appendChild(listItem);
 

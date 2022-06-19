@@ -18,21 +18,20 @@ if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getIt
         sendEmail(userinfo.email, choosenVehicle.marca);
     })
 
+    //Funcion que manda un email a "Elastic email".
+    //Configurada mediante un token creado por https://smtpjs.com/ y utilizando un servidor "smtp" en "Elastic email"
+    function sendEmail(userEmail, brandVehicle) {
+        Email.send({
+            SecureToken : "4b239979-0b0b-4b07-ba2d-a6e175878bae",
+            To : userEmail,
+            From : "ggi83428@educastur.es",
+            Subject : "Compra del vehiculo " + brandVehicle,
+            Body : "Hola, email de confirmacion de la compra del vehiculo : " + brandVehicle
+        }).then(
+          message => alert(message)
+        );
+    }
 }
 else {
     window.location.href = "../../index.html";
-}
-
-//Funcion que manda un email a "Elastic email".
-//Configurada mediante un token creado por https://smtpjs.com/ y utilizando un servidor "smtp" en "Elastic email"
-function sendEmail(userEmail, brandVehicle) {
-    Email.send({
-        SecureToken : "4b239979-0b0b-4b07-ba2d-a6e175878bae",
-        To : userEmail,
-        From : "ggi83428@educastur.es",
-        Subject : "Compra del vehiculo " + brandVehicle,
-        Body : "Hola, email de confirmacion de la compra del vehiculo : " + brandVehicle
-    }).then(
-      message => alert(message)
-    );
 }

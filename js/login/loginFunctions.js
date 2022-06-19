@@ -3,11 +3,12 @@ function loginChangeNav(){
         document.getElementById("loginRegister").setAttribute("class", "d-none");
         document.getElementById("loginDates").setAttribute("class", "col-3 d-block");
         document.getElementById("userName").textContent="Bienvenido " + JSON.parse(localStorage.getItem('userLogued')).nombre;
-        if(localStorage.getItem('userLogued')!=="user"){
+        if(JSON.parse(localStorage.getItem('userLogued')).role!=="user"){
             document.getElementById("panelAdmin").setAttribute("class", "d-inline-block fs-4 bg-warning text-dark border rounded-pill border-dark font-monospace p-1");
         }
         else{
-            document.getElementById("panelAdmin").setAttribute("class", "d-none");
+            if(!(window.location.href).includes("vehicleMethodPayment.html"))
+                document.getElementById("panelAdmin").setAttribute("class", "d-none");
         }
     }
     else{
