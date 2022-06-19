@@ -32,3 +32,12 @@ article img{
     background-color: #D3D3D3;
 }
 
+.updateVehiclesDisabled{
+    background-color: #000;
+  pointer-events: none;
+    
+  /* for "disabled" effect */
+  opacity: 0.5;
+
+}
+
