@@ -85,7 +85,7 @@
                     <div class="form-group row col-10">
                         <label for="typeVehicleUpdate">Tipo de vehiculo</label>
                         <select class="form-control" id="typeVehicleUpdate" name="typeVehicleUpdate">
-                            <option value="coche" selected>Coche</option>
+                            <option value="coche">Coche</option>
                             <option value="moto">Moto</option>
                             <option value="furgoneta">Furgoneta</option>
                             <option value="camion">Camion</option>
@@ -93,30 +93,30 @@
                     </div>
 
                     <div class="form-group row col-10">
-                        <label for="brandUpdate">Marca</label>
-                        <input class="form-control" type="text" name="brandUpdate" maxlength="15" required>
+                        <label for="">Marca</label>
+                        <input class="form-control" type="text" id="brandUpdate" name="brandUpdate" maxlength="15" required>
                     </div>
 
                     <div class="form-group row col-10">
                         <label for="modelUpdate">Modelo</label>
-                        <input class="form-control" type="text" name="modelUpdate" required>
+                        <input class="form-control" type="text" id="modelUpdate" name="modelUpdate" required>
                     </div>
 
                     <div class="form-group row col-5">
                         <label for="yearUpdate">Año de fabricación</label>
-                        <input class="form-control" type="number" name="yearUpdate" value="2005" min="1990"
+                        <input class="form-control" type="number" id="yearUpdate" name="yearUpdate" value="2005" min="1990"
                             max="2022" required>
                     </div>
 
                     <div class="form-group row col-5">
                         <label for="powerUpdate">Potencia</label>
-                        <input class="form-control col-2" type="number" name="powerUpdate" step="10" min="0"
+                        <input class="form-control col-2" type="number" id="powerUpdate" name="powerUpdate" min="0"
                             max="500" required>
                     </div>
 
                     <div class="form-group row col-5">
                         <label for="ccUpdate">Cilindrada</label>
-                        <input class="form-control" type="number" name="ccUpdate" min="1000" max="4000" step="100"
+                        <input class="form-control" type="number" id="ccUpdate" name="ccUpdate" min="1000" max="4000" step="50"
                             required>
                     </div>
 
@@ -130,13 +130,13 @@
 
                     <div class="form-group row col-5">
                         <label for="nDoorsUpdate">Numero de puertas</label>
-                        <input class="form-control" type="number" name="nDoorsUpdate" value="2" min="2" max="5"
+                        <input class="form-control" type="number" id="nDoorsUpdate" name="nDoorsUpdate" value="2" min="2" max="5"
                             required>
                     </div>
 
                     <div class="form-group row col-5">
                         <label for="colorUpdate">Color</label>
-                        <input class="form-control" type="text" name="colorUpdate" maxlength="10" required>
+                        <input class="form-control" type="text" id="colorUpdate" name="colorUpdate" maxlength="10" required>
                     </div>
 
                     <div class="form-group row col-5">
@@ -151,7 +151,7 @@
 
                     <div class="form-group row col-5">
                         <label for="PriceUpdate">Precio</label>
-                        <input class="form-control" type="number" name="PriceUpdate" step="500" min="0" max="200000"
+                        <input class="form-control" type="number" id="PriceUpdate" name="PriceUpdate" step="500" min="0" max="200000"
                             required>
                     </div>
 
