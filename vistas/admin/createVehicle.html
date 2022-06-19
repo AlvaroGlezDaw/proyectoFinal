@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP&GO</title>
+    <link rel="icon" href="img/LogoOficial.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script defer src="../../js/admin/admin.js"></script>
+</head>
+
+<body class="row">
+    <nav id="leftVerticalNavAdmin" class="row col-3 bg-dark p-4">
+        <div class="adminInfo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="50" fill="currentColor"
+                class="bi bi-person-circle text-light" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+        </div>
+
+        <div id="optionsVehiclesAdmin">
+            <div class="row text-light">
+                <h2>Vehículos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-truck" viewBox="0 0 16 16">
+                        <path
+                            d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                </h2>
+                <hr>
+                <button id="allCarsAdmin" class="btn btn-success mb-4 mt-3">Coches</button>
+                <button id="allBikesAdmin" class="btn btn-success mb-4">Motos</button>
+                <button id="allTrucksAdmin" class="btn btn-success mb-4">Camiones</button>
+                <button id="allVansAdmin" class="btn btn-success mb-5">Furgonetas</button>
+            </div>
+
+            <div class="row text-light">
+                <h2>Modificaciones
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                        <path
+                            d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
+                    </svg>
+                </h2>
+                <hr>
+                <button class="btn btn-success mt-3 mb-5">Nuevo vehículo</button>
+            </div>
+
+            <div class="row text-light">
+                <h2>Users
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-people" viewBox="0 0 16 16">
+                        <path
+                            d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                    </svg>
+                </h2>
+                <hr>
+                <button id="allUsersAdmin" class="btn btn-success mt-3">Ver Usuarios</button>
+            </div>
+        </div>
+    </nav>
+    <div class="col-9">
+        <nav class="bg-dark text-light p-4">
+            <h1>Bienvenido al panel del administrador</h1>
+        </nav>
+        <div id="infoContainerAdmin" class="row col-9 p-5">
+            <h1>Creación de un nuevo vehiculo</h1>
+            <form class="row col-10 ms-4 mt-3" enctype="multipart/form-data" action="../../php/adminCreate.php"
+                method="post">
+                <div class="row  mb-5 gap-3 border border-secondary border-3 rounded p-4">
+                    <h2>Datos del vehiculo</h2>
+                    <div class="form-group row col-10">
+                        <label for="typeVehicleCreate">Tipo de vehiculo</label>
+                        <select class="form-control" id="typeVehicleCreate" name="typeVehicleCreate">
+                            <option value="coche" selected>Coche</option>
+                            <option value="moto">Moto</option>
+                            <option value="furgoneta">Furgoneta</option>
+                            <option value="camion">Camion</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="brandCreate">Marca</label>
+                        <input class="form-control" type="text" name="brandCreate" maxlength="15" onchange="keepFields()"required>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="modelCreate">Modelo</label>
+                        <input class="form-control" type="text" name="modelCreate" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="yearCreate">Año de fabricación</label>
+                        <input class="form-control" type="number" name="yearCreate" value="2005" min="1990"
+                            max="2022" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="powerCreate">Potencia</label>
+                        <input class="form-control col-2" type="number" name="powerCreate" step="10" min="0"
+                            max="500" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="ccCreate">Cilindrada</label>
+                        <input class="form-control" type="number" name="ccCreate" min="1000" max="4000" step="100"
+                            required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="gearCreate">Cambio</label>
+                        <select class="form-control" id="gearCreate" name="gearCreate">
+                            <option value="Manual" selected>Manual</option>
+                            <option value="Automatico">Automatico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="nDoorsCreate">Numero de puertas</label>
+                        <input class="form-control" type="number" name="nDoorsCreate" value="2" min="2" max="5"
+                            required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="colorCreate">Color</label>
+                        <input class="form-control" type="text" name="colorCreate" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="FuelCreate">Combustible</label>
+                        <select class="form-control" id="FuelCreate" name="FuelCreate">
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hibrido">Híbrido</option>
+                            <option value="Electrico">Eléctrico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row col-5">
+                        <label for="PriceCreate">Precio</label>
+                        <input class="form-control" type="number" name="PriceCreate" step="500" min="0" max="200000"
+                            required>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="">Imagenes</label>
+                        <input class="form-control" type="file" name="imageCreate[]" multiple
+                            accept="image/png, image/jpg, image/jpeg">
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="descriptionCreate">Descripcion</label>
+                        <textarea class="form-control" id="descriptionCreate" name="descriptionCreate"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group row col-10">
+                        <label for="offerCreate">Oferta</label>
+                        <select class="form-control" id="offerCreate" name="offerCreate">
+                            <option value="no">No</option>
+                            <option value="yes">Si</option>
+                        </select>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-primary offset-5 col-7 btn btn-primary p-3">Crear Vehículo</a>
+        </form>
+    </div>
+</body>
+
+</html>
