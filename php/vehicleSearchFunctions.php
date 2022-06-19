@@ -45,5 +45,14 @@ function searchBrandVehicle($vehicleTable){
     return $brands;
 }
 
+function searchAllVehicles($vehicleTable){
+    $allvehicules = $vehicleTable->find();
+    return $allvehicules;
+}
+
+function deleteVehicleById($vehicleId, $vehicleTable){
+    $vehicleTable->deleteOne(['_id'=> new \MongoDB\BSON\ObjectId("$vehicleId")]);
+}
+
 
 ?>

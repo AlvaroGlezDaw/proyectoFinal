@@ -1,4 +1,4 @@
-if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getItem('userLogued')).email !== "admin") {
+if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getItem('userLogued')).email !== "admin@admin") {
     loginChangeNav();
 }
 else {
