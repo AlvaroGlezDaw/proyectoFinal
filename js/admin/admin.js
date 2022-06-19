@@ -1,15 +1,17 @@
-document.getElementById("allCarsAdmin").addEventListener("click", ()=>{
+if(localStorage.getItem('showAdminTypeVehicle')==="cars"){
     searchVehiclesForAdmin("cars");
-})
-document.getElementById("allBikesAdmin").addEventListener("click", ()=>{
+}
+else if(localStorage.getItem('showAdminTypeVehicle')==="bikes"){
     searchVehiclesForAdmin("bikes");
-})
-document.getElementById("allTrucksAdmin").addEventListener("click", ()=>{
+}
+else if(localStorage.getItem('showAdminTypeVehicle')==="trucks"){
     searchVehiclesForAdmin("trucks");
-})
-document.getElementById("allVansAdmin").addEventListener("click", ()=>{
+}
+else{
     searchVehiclesForAdmin("vans");
-})
+}
+
+
 document.getElementById("newVehicleAdmin").addEventListener("click", ()=>{
     window.location.href="createVehicle.html";
 })
