@@ -14,7 +14,7 @@ function loginChangeNav(){
     else{
         document.getElementById("loginDates").setAttribute("class", "d-none");
         document.getElementById("userName").textContent="";
-        document.getElementById("loginRegister").setAttribute("class", "col-3 d-block");
+        document.getElementById("loginRegister").setAttribute("class", "col-5 d-block");
     }
 }
 

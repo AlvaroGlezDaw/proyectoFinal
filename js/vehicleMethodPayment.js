@@ -18,6 +18,11 @@ if (localStorage.getItem('userLogued') !== null && JSON.parse(localStorage.getIt
         sendEmail(userinfo.email, choosenVehicle.marca);
     })
 
+    document.getElementById("submitFormPayPal").addEventListener('click', ()=>{
+        document.payVehicle.submit();
+        sendEmail(userinfo.email, choosenVehicle.marca);
+    })
+
     //Funcion que manda un email a "Elastic email".
     //Configurada mediante un token creado por https://smtpjs.com/ y utilizando un servidor "smtp" en "Elastic email"
     function sendEmail(userEmail, brandVehicle) {
