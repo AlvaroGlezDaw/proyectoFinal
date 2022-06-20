@@ -27,12 +27,12 @@
 <body>
     <div id="container" class="row col-12 mx-5">
         <header id="fondo-header" class="row col-12 mb-5 justify-content-center p-5">
-            <div id="loginRegister" class="col-5">
+            <div id="loginRegister" class="col-7 col-md-5">
                 <a href="vistas/usuario/login.html" class="text-decoration-none fs-4 bg-warning text-dark border rounded-pill border-dark font-monospace p-3">Login</a>
                 <a href="vistas/usuario/register.html" class="ms-4 text-decoration-none fs-4 bg-warning text-dark border rounded-pill border-dark font-monospace p-3">Registrate</a>
             </div>
             
-            <div id="loginDates" class="row col-2 d-none">
+            <div id="loginDates" class="row col-5 d-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="75" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -42,22 +42,22 @@
                 <p id="userName" class="font-monospace fs-5"></p>
             </div>
 
-            <div class="row offset-3 col-4 mb-4">
+            <div class="row offset-1 offset-md-3 col-4 mb-4">
                 <p class="display-1"><span class="text-danger">STOP</span>&</span><span class="text-success">GO</span></p>
             </div>
             <div class="menu-principal row offset-1 col-10 gap-3">
-                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="cars">Coches</button>
-                <button class="col-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="bikes">Motos</button>
-                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="trucks">Camiones</button>
-                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="vans">Furgonetas</button>
-                <button class="col-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="offers">Ofertas</button>
+                <button class="col-3 col-md-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="cars">Coches</button>
+                <button class="col-3 col-md-2 btn bg-light py-3 px-4 text-center rounded-pill border-dark" id="bikes">Motos</button>
+                <button class="col-3 col-md-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="trucks">Camiones</button>
+                <button class="offset-2 offset-md-0 col-3 col-md-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="vans">Furgonetas</button>
+                <button class="col-3 col-md-2 btn bg-info py-3 px-4 text-center rounded-pill  border-dark" id="offers">Ofertas</button>
             </div>
         </header>
 
         <!--Contenido a cambiar-->
 
         <div id="vehicle-content" class="row col-12">
-            <nav id="nav-left" class="vehicleMenu col-3 bg-secondary p-4">
+            <nav id="nav-left" class="vehicleMenu offset-1 offset-md-0 col-10 col-md-3 bg-secondary p-4">
             </nav>
             <!--Template del left-nav-->
             <template id="card-nav">
@@ -129,7 +129,7 @@
                 </div>
             </template>
 
-            <main id="main" class="vehicles row col-9 gap-3">
+            <main id="main" class="vehicles row offset-1 offset-md-0 col-9 col-md-9 gap-3">
             </main>
             <!--Template del main-->
             <template id="vehicle-main">
